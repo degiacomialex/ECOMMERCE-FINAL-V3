@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   
-  // 💥 FIX CRÍTICO: Se añade la propiedad 'base' con el nombre del repositorio 💥
-  base: '/ECOMMERCE-FINAL-V3/', 
+  // 💥 FIX FINAL: Usa punto y barra (./) para la ruta base 💥
+  base: './', 
 })
