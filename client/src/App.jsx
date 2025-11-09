@@ -35,13 +35,10 @@ const productsData = [
     { id: 12, category: 'TAZAS Y TERMOS', name: 'Taza con Frase', price: 4500, image: producto4, description: 'Taza de cerámica con frase motivacional.' },
 ];
 
-// client/src/App.jsx
-
-// ... (inicio del archivo)
-
 // 💥 ESTRUCTURA FINAL Y DEFINITIVA DEL MENÚ 💥
 const menuItems = [
     { 
+
         name: 'INDUMENTARIA PERSONALIZADA', 
         dropdown: true, 
         subcategories: ['Remeras', 'Buzos y Camperas'] 
