@@ -35,24 +35,43 @@ const productsData = [
     { id: 12, category: 'TAZAS Y TERMOS', name: 'Taza con Frase', price: 4500, image: producto4, description: 'Taza de cerámica con frase motivacional.' },
 ];
 
-// 💥 DATOS DE MENÚ PROFESIONAL 💥
+// client/src/App.jsx
+
+// ... (inicio del archivo)
+
+// 💥 ESTRUCTURA FINAL Y DEFINITIVA DEL MENÚ 💥
 const menuItems = [
-    { name: 'NUEVO LANZAMIENTO', link: '#nuevo' },
     { 
-        name: 'HOMBRE', 
+        name: 'INDUMENTARIA PERSONALIZADA', 
         dropdown: true, 
-        subcategories: ['Remeras', 'Buzos', 'Gorras', 'Regalos'] 
+        subcategories: ['Remeras', 'Buzos y Camperas'] 
     },
     { 
-        name: 'MUJER', 
+        name: 'ACCESORIOS', 
         dropdown: true, 
-        subcategories: ['Remeras', 'Buzos', 'Día de la Madre', 'Accesorios'] 
+        // ¡Incluimos almohadones!
+        subcategories: ['Sets Materos Personalizados', 'Botellas Personalizadas', 'Gorras y Pilusos', 'Llaveros', 'Almohadones'] 
     },
-    { name: 'NIÑOS', link: '#ninos' },
-    { name: 'PERSONALIZADOS', link: '#personalizados' },
-    { name: 'CATÁLOGO TEMÁTICO', link: '#catalogo' },
-    { name: 'GUÍA DE TALLES', link: '#guiatalles' },
+    { 
+        name: 'EGRESADOS', 
+        dropdown: true, 
+        subcategories: ['Buzos', 'Camperas', 'Remeras', 'Banderas'] 
+    },
+    { 
+        name: 'FECHAS ESPECIALES', 
+        dropdown: true, 
+        subcategories: ['Día del Padre', 'Día de la Madre', 'Día del Amigo', 'Navidad', 'Otras Fiestas'] 
+    },
+    { 
+        name: 'PARA EMPRESAS', 
+        dropdown: true, 
+        subcategories: ['Ropa Corporativa', 'Merchandising'] 
+    },
+    { name: 'TAZAS', link: '#tazas' }, // ¡Tazas como categoría principal!
+    { name: 'GUÍA DE TALLES', link: '#guiatalles' }, // Mantenemos la utilidad
 ];
+
+// ... (resto del archivo)
 
 
 const ToastNotification = ({ show, message }) => {

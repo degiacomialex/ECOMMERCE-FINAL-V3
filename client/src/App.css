@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 :root {
   /* 💥 PALETA DE COLORES PROFESIONAL Y OSCURA 💥 */
   --primary-color: #343a40;    /* Gris muy oscuro (Base para Menú/Footer/Texto Principal) */
@@ -13,7 +14,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 /* --- FIX CRÍTICO para Sticky Header (NO TOCAR) --- */
@@ -116,12 +118,15 @@ header h1 {
 .nav-link {
   color: white;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 10px 12px; /* Reducimos el padding lateral (antes 15px) */
   display: block;
-  font-weight: bold;
-  font-size: 0.9em;
+  font-weight: 700; /* Usamos el peso bold de Roboto */
+  font-size: 0.8em; /* Reducimos el tamaño de la fuente (antes 0.9em) */
+  line-height: 1.2; /* Ajustamos el espacio vertical */
   transition: background-color 0.2s, color 0.2s;
   text-transform: uppercase;
+  /* Aseguramos que el texto no se rompa si el menú es muy largo */
+  white-space: nowrap; 
 }
 
 .nav-item:hover > .nav-link {
