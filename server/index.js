@@ -1,42 +1,37 @@
-const express = require('express');
-const cors = require('cors');
-const { MercadoPagoConfig } = require('mercadopago'); 
-require('dotenv').config(); 
+// server/index.js
 
-// --- 1. INICIALIZACIÓN DEL SDK (Usando el Token del .env) ---
-const client = new MercadoPagoConfig({ 
-    accessToken: process.env.ACCESS_TOKEN, // Usamos el Token 'TEST-'
-});
+import express from 'express';
+import cors from 'cors';
 
+// 1. Configuración inicial
 const app = express();
-app.use(cors());
-app.use(express.json());
+const PORT = 3001; // Usaremos el puerto 3001 para el backend
 
-// --- 2. RUTA: CREAR PREFERENCIA (Checkout Pro) ---
-app.post('/create_preference', async (req, res) => {
-    // Definimos el cuerpo de la preferencia con los ítems del carrito
-    const preferenceBody = {
-        items: req.body.items,
-        back_urls: {
-            success: "http://localhost:5173/success", // Puerto de Vite
-            failure: "http://localhost:5173/failure",
-            pending: "http://localhost:5173/",
-        },
-        auto_return: "approved", 
-    };
+// 2. Middlewares
+app.use(cors()); // ¡IMPORTANTE! Permite peticiones del cliente
+app.use(express.json()); // Permite al servidor entender JSON
 
-    try {
-        const result = await client.preferences.create({ body: preferenceBody });
-        
-        // 🚨 CLAVE: Devolvemos el init_point (link de pago) 🚨
-        res.status(200).json({ id: result.id, init_point: result.init_point }); 
+// 3. Mismos datos de productos, pero ahora en el servidor
+// Nota: Las rutas de imagen '/images/...' funcionan porque
+// tu cliente de Vite las sirve desde la carpeta 'public'.
+const productsData = [
+  { id: 1, category: 'RIÑONERAS', name: 'Riñonera Lobo', price: 15000, image: '/images/producto1.jpeg', description: 'Riñonera de tela sublimada con diseño de lobo. Ideal para paseos y deporte.' },
+  { id: 2, category: 'SET DE MATE', name: 'Set Matero Floral', price: 18000, image: '/images/producto2.jpeg', description: 'Set completo de mate con diseño floral, incluye termo, mate, yerbero y azucarero.' },
+  { id: 3, category: 'MOCHILAS INFANTILES', name: 'Mochila Cars', price: 25000, image: '/images/producto3.jpeg', description: 'Mochila infantil con diseño de la película Cars. Amplia y resistente, perfecta para el jardín.' },
+  { id: 4, category: 'TAZAS Y TERMOS', name: 'Termo Personalizado', price: 20000, image: '/images/producto4.jpeg', description: 'Termo de acero inoxidable personalizado a tu gusto. Mantiene la temperatura por horas.' },
+  { id: 5, category: 'TAZAS Y TERMOS', name: 'Set Tazas', price: 9000, image: '/images/producto1.jpeg', description: 'Juego de dos tazas de cerámica sublimadas con diseños a elección.' },
+  { id: 6, category: 'RIÑONERAS', name: 'Riñonera Gato', price: 15500, image: '/images/producto2.jpeg', description: 'Riñonera con estampado de gatos juguetones. Ajustable y con varios compartimentos.' },
+  // ... (aquí irían el resto de tus productos)
+];
 
-    } catch (error) {
-        console.error("Error al crear preferencia. Revisa si el Token TEST- es válido:", error); 
-        res.status(500).json({ error: 'Error al crear la preferencia de pago.' });
-    }
+// 4. Nuestra primera "Ruta" o "Endpoint"
+// Cuando el cliente pida 'http://localhost:3001/api/products'
+// le enviaremos la lista de productos en formato JSON.
+app.get('/api/products', (req, res) => {
+  res.json(productsData);
 });
 
-app.listen(3001, () => {
-    console.log('Servidor de Mercado Pago corriendo en http://localhost:3001');
+// 5. Iniciar el servidor
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
