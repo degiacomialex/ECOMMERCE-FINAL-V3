@@ -598,3 +598,130 @@ footer {
     width: 100%;
   }
 }
+/* --- ESTILOS RESPONSIVE PARA MENÚ HAMBURGUESA --- */
+
+/* 1. Botón Hamburguesa (Oculto en PC, visible en mobile) */
+.hamburger-button {
+  display: none; /* Oculto por defecto */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  z-index: 1001; /* Encima del header */
+}
+
+/* 2. Estilos del Menú Lateral (Drawer) */
+.mobile-menu-drawer {
+  position: fixed; /* Se queda fijo en la pantalla */
+  top: 0;
+  left: 0;
+  width: 280px; /* Ancho del menú lateral */
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* ¡Por encima de todo! */
+  
+  /* Animación: empieza oculto fuera de la pantalla */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu-drawer.open {
+  transform: translateX(0); /* Se muestra */
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 60px; /* Espacio para el botón de cerrar */
+}
+
+.mobile-nav-header {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  background-color: #f4f4f4;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 15px 20px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-nav-link:hover {
+  background-color: #f9f9f9;
+}
+
+
+/* --- @media query (La Magia) --- */
+/* Estilos que se aplican SOLO si la pantalla es de 900px o menos */
+@media (max-width: 900px) {
+
+  /* 1. Ocultamos el menú de PC */
+  .desktop-nav {
+    display: none;
+  }
+
+  /* 2. Mostramos el botón hamburguesa */
+  .hamburger-button {
+    display: block;
+    order: -1; /* Lo pone primero en el header */
+  }
+
+  /* 3. Ajustamos el Header para mobile */
+  header {
+    justify-content: space-between;
+  }
+  
+  .header-logo-link {
+    /* Centramos el logo que queda */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  header h1 {
+     font-size: 1.2rem; /* Achicamos el logo */
+  }
+  .sub-sublimacion {
+    display: none; /* Ocultamos el subtitulo "Sublimacion" */
+  }
+
+  /* 4. Ocultamos el buscador (ocupa mucho espacio) */
+  .search-bar {
+    display: none; 
+  }
+
+  /* 5. Ajustamos el carrito (lo movemos un poco) */
+  .cart-link {
+    padding: 8px; /* Hacemos el área de click más chica */
+  }
+  
+  /* Ajustamos el responsive que ya tenías */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: row; /* Sobreescribimos tu 'column' para que se vea bien */
+      height: var(--header-height); /* Mantenemos la altura fija */
+    }
+  }
+}

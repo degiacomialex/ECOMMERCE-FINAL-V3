@@ -23,6 +23,9 @@ const App = () => {
   const [modalProduct, setModalProduct] = useState(null); 
   const [toast, setToast] = useState({ show: false, message: '' }); 
 
+  // 💥 1. NUEVO ESTADO para el menú hamburguesa
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   // --- Carga de Datos ---
   useEffect(() => {
     fetch('/ECOMMERCE-FINAL-V3/products.json') 
@@ -86,8 +89,15 @@ const App = () => {
       />
       <ToastNotification show={toast.show} message={toast.message} />
 
-      <HeaderBar cartItemCount={totalItems} />
-      <NavBar />
+      {/* 💥 2. Pasamos las funciones al Header y al Nav */}
+      <HeaderBar 
+        cartItemCount={totalItems} 
+        onHamburgerClick={() => setIsMobileMenuOpen(true)} // Abre el menú
+      />
+      <NavBar 
+        isMobileMenuOpen={isMobileMenuOpen}
+        onCloseMenu={() => setIsMobileMenuOpen(false)} // Cierra el menú
+      />
 
       <main className="main-content">
         <Routes>
