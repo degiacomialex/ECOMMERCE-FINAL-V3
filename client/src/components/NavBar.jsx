@@ -14,12 +14,10 @@ const menuItems = [
   { name: 'GUÍA DE TALLES', filterKey: 'GUIA DE TALLES' },
 ];
 
-// 1. Recibimos las props del estado del menú
 const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
   
-  // 2. Función para que el menú se cierre al hacer clic en un link
   const handleLinkClick = () => {
-    onCloseMenu();
+    onCloseMenu(); // Cierra el menú al hacer clic en un enlace
   };
 
   return (
@@ -57,34 +55,34 @@ const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
       {/* --- 2. MENÚ HAMBURGUESA (Visible solo en Celular) --- */}
       <div className={`mobile-menu-drawer ${isMobileMenuOpen ? 'open' : ''}`}>
         <button className="mobile-menu-close" onClick={onCloseMenu}>&times;</button>
-        <ul className="mobile-nav-list">
-          {/* Mapeamos todos los items y sub-items en una sola lista vertical */}
-          {menuItems.map(item => {
-            // Caso 1: Es un item con subcategorías
-            if (item.dropdown) {
+        {/* 💥 Aquí está el scroll del menú hamburguesa 💥 */}
+        <div className="mobile-menu-content-scroll"> 
+          <ul className="mobile-nav-list">
+            {menuItems.map(item => {
+              if (item.dropdown) {
+                return (
+                  <React.Fragment key={item.name}>
+                    <li className="mobile-nav-header">{item.name}</li>
+                    {item.subcategories.map(sub => (
+                      <li key={sub}>
+                        <Link to={`/categoria/${sub}`} className="mobile-nav-link" onClick={handleLinkClick}>
+                          {sub}
+                        </Link>
+                      </li>
+                    ))}
+                  </React.Fragment>
+                );
+              }
               return (
-                <React.Fragment key={item.name}>
-                  <li className="mobile-nav-header">{item.name}</li>
-                  {item.subcategories.map(sub => (
-                    <li key={sub}>
-                      <Link to={`/categoria/${sub}`} className="mobile-nav-link" onClick={handleLinkClick}>
-                        {sub}
-                      </Link>
-                    </li>
-                  ))}
-                </React.Fragment>
+                <li key={item.name}>
+                  <Link to={`/categoria/${item.filterKey || item.name}`} className="mobile-nav-link" onClick={handleLinkClick}>
+                    {item.name}
+                  </Link>
+                </li>
               );
-            }
-            // Caso 2: Es un item simple (ej: TAZAS)
-            return (
-              <li key={item.name}>
-                <Link to={`/categoria/${item.filterKey || item.name}`} className="mobile-nav-link" onClick={handleLinkClick}>
-                  {item.name}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+            })}
+          </ul>
+        </div>
       </div>
     </>
   );

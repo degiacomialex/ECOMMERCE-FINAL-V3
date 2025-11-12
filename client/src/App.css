@@ -725,3 +725,187 @@ footer {
     }
   }
 }
+/* --- NUEVOS ESTILOS RESPONSIVE --- */
+
+/* Ajustes generales para el app-container en mobile */
+@media (max-width: 900px) {
+  .app-container {
+    overflow-x: hidden; /* Evita scroll horizontal por si acaso */
+  }
+}
+
+/* 1. Botón Hamburguesa (Ahora con texto "Menú" y mejor alineación) */
+.hamburger-button {
+  display: none; /* Oculto por defecto en PC */
+  background: none;
+  border: none;
+  font-size: 1.5rem; /* Achicamos un poco el ícono */
+  color: var(--primary-color);
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0 10px; /* Espacio alrededor del botón */
+  display: flex; /* Para alinear ícono y texto */
+  align-items: center;
+  gap: 5px; /* Espacio entre el ícono y el texto */
+}
+
+.hamburger-text {
+  font-size: 0.9rem; /* Tamaño del texto "Menú" */
+  font-weight: bold;
+}
+
+/* 2. Menú Lateral (Drawer) */
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  max-width: 80vw; /* Máximo 80% del ancho de la vista */
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex; /* Para organizar el botón de cerrar y el contenido */
+  flex-direction: column;
+}
+
+.mobile-menu-drawer.open {
+  transform: translateX(0);
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 15px; /* Más abajo para no chocar */
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem; /* Achicamos un poco la X */
+  color: var(--primary-color);
+  cursor: pointer;
+  z-index: 10000; /* Aseguramos que la X esté siempre encima */
+}
+
+/* 💥 ESTO HACE QUE EL CONTENIDO DEL MENÚ SEA SCROLLEABLE 💥 */
+.mobile-menu-content-scroll {
+  flex-grow: 1; /* Para que ocupe todo el espacio restante */
+  overflow-y: auto; /* ¡AQUI ESTÁ LA MAGIA DEL SCROLL! */
+  padding-top: 60px; /* Espacio para que el contenido no quede debajo de la X */
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav-header {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  background-color: #f4f4f4;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 15px 20px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-nav-link:hover {
+  background-color: #f9f9f9;
+}
+
+
+/* --- @media query (La Magia Responsiva) --- */
+@media (max-width: 900px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger-button {
+    display: flex; /* Ahora siempre visible en mobile */
+    order: -1; 
+  }
+
+  header {
+    justify-content: space-between;
+    padding: 10px 15px; /* Ajustamos padding del header */
+  }
+  
+  .header-logo-link {
+    position: static; /* Quitamos la posición absoluta para que fluya */
+    transform: none; /* Quitamos el transform */
+    flex-grow: 1; /* Para que el logo ocupe el espacio central */
+    text-align: center; /* Centramos el logo */
+    margin: 0 10px; /* Margen para no chocar con hamburguesa/carrito */
+  }
+  
+  header h1 {
+     font-size: 1.2rem;
+     justify-content: center; /* Centramos el texto dentro del h1 */
+     margin: 0; /* Aseguramos que no haya margen extra */
+  }
+  .sub-sublimacion {
+    display: none;
+  }
+
+  .search-bar {
+    display: none; 
+  }
+
+  .cart-link {
+    padding: 8px;
+  }
+  
+  /* Ajuste para que el logo no sea demasiado grande en pantallas pequeñas */
+  header h1 img {
+    height: 25px; 
+    margin-right: 5px;
+  }
+
+  /* --- 💥 MODAL RESPONSIVE para pantallas pequeñas (ej: iPhone) 💥 --- */
+  .modal-content {
+    width: 95%; /* Más ancho en mobile */
+    max-width: 95vw; /* Aseguramos que no se salga */
+    max-height: 90vh; /* Máximo 90% de la altura de la vista */
+    overflow-y: auto; /* ¡MUY IMPORTANTE para el scroll interno del modal! */
+    padding: 20px 15px; /* Reducimos el padding */
+  }
+
+  .modal-body {
+    flex-direction: column; /* La imagen arriba, detalles abajo */
+    gap: 20px; /* Menos espacio entre elementos */
+  }
+
+  .modal-image {
+    width: 100%;
+    height: 250px; /* Altura fija para la imagen */
+  }
+
+  .modal-details {
+    width: 100%;
+  }
+
+  .modal-close-button {
+    font-size: 2em; /* La X un poco más grande y fácil de tocar */
+    top: 5px;
+    right: 5px;
+  }
+}
+
+/* Ajuste adicional para pantallas muy pequeñas, si el texto "Menú" molesta */
+@media (max-width: 480px) {
+  .hamburger-text {
+    display: none; /* Ocultamos el texto "Menú" si la pantalla es muy chica */
+  }
+}
