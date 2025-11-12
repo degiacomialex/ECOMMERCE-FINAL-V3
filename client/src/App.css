@@ -86,14 +86,15 @@ header h1 {
   opacity: 0.9;
 }
 
-.bottom-menu {
+/* 💥 MENÚ DE ESCRITORIO (PC) 💥 */
+.bottom-menu.desktop-nav {
   background-color: var(--primary-color);
   height: var(--menu-height); 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: var(--header-height); 
   z-index: 999; 
-  display: flex;
+  display: flex; /* Visible en PC */
   align-items: center;
   padding: 0 20px;
 }
@@ -164,13 +165,14 @@ header h1 {
 .dropdown-menu li button:hover {
   background-color: #f1f1f1;
 }
+
 /* 💥 ESTILOS PARA LOS NUEVOS LINKS DEL DROPDOWN 💥 */
 .dropdown-link {
   color: var(--primary-color);
   padding: 10px 15px;
   text-align: left;
-  display: block; /* Importante para que ocupe todo el <li> */
-  text-decoration: none; /* Quitamos el subrayado de Link */
+  display: block;
+  text-decoration: none;
   width: 100%;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -180,6 +182,8 @@ header h1 {
   background-color: #f1f1f1;
 }
 
+
+/* --- Contenido Principal y Carrusel --- */
 .main-content {
   padding: 20px;
   flex-grow: 1;
@@ -231,6 +235,7 @@ header h1 {
   object-fit: cover;
 }
 
+/* --- Galería y Tarjetas --- */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -247,7 +252,6 @@ header h1 {
   box-shadow: 0 6px 15px var(--card-shadow); 
   text-align: center;
   position: relative;
-  /* 💥 AUMENTAMOS EL PADDING PARA DOS BOTONES 💥 */
   padding-bottom: 110px; 
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -275,22 +279,20 @@ header h1 {
   margin-bottom: 10px;
 }
 
-/* 💥 NUEVO CONTENEDOR DE BOTONES 💥 */
 .product-card-actions {
-  position: absolute; /* Lo fijamos abajo */
+  position: absolute;
   bottom: 20px;
   left: 0;
   width: 100%;
   display: flex;
-  flex-direction: column; /* Un botón encima del otro */
+  flex-direction: column;
   align-items: center;
   gap: 10px;
   padding: 0 15px;
 }
 
-/* 💥 ESTILOS PARA EL BOTÓN DE AÑADIR (VISBLE) 💥 */
 .add-to-cart-button {
-  background-color: var(--secondary-color); /* Color azul */
+  background-color: var(--secondary-color);
   color: white;
   border: none;
   padding: 10px 12px;
@@ -298,14 +300,13 @@ header h1 {
   font-weight: 600;
   cursor: pointer;
   border-radius: 4px;
-  width: 90%; /* Que ocupe casi todo el ancho */
+  width: 90%;
   transition: background-color 0.2s;
 }
 .add-to-cart-button:hover {
-  background-color: #0056b3; /* Azul más oscuro */
+  background-color: #0056b3;
 }
 
-/* 💥 AJUSTAMOS EL BOTÓN "VER DETALLE" PARA QUE COINCIDA 💥 */
 .view-details-button {
   background-color: #f0f0f0;
   color: #333;
@@ -315,21 +316,14 @@ header h1 {
   font-weight: 600;
   cursor: pointer;
   border-radius: 4px;
-  width: 90%; /* Que ocupe casi todo el ancho */
+  width: 90%;
   transition: background-color 0.2s;
-  margin: 0; /* Reseteamos márgenes viejos */
+  margin: 0;
 }
 
 .view-details-button:hover {
   background-color: #e0e0e0;
 }
-
-
-/* 💥 HEMOS ELIMINADO LOS ESTILOS DE: 💥
- * .product-actions-overlay
- * .product-card:hover .product-actions-overlay
- * .overlay-button
-*/
 
 /* --- TOAST NOTIFICATION STYLES --- */
 .toast-container {
@@ -367,7 +361,7 @@ header h1 {
   color: #2ecc71;
 }
 
-/* --- FOOTER (Gris Oscuro Sobrio) --- */
+/* --- FOOTER --- */
 footer {
   background-color: #212529; 
   color: white;
@@ -500,7 +494,7 @@ footer {
   transition: background-color 0.3s;
 }
 
-/* --- ESTILOS PARA LA PÁGINA DE CARRITO (Full Width) --- */
+/* --- Página de Carrito --- */
 .cart-view-page {
   padding: 30px 5%;
   max-width: 1200px;
@@ -560,7 +554,7 @@ footer {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
-  top: 150px; /* Se queda fijo al hacer scroll */
+  top: 150px;
 }
 .back-button {
   background: none;
@@ -573,184 +567,24 @@ footer {
 }
 
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    height: auto;
-  }
-  .search-bar {
-    margin-top: 10px;
-    width: 100%;
-    justify-content: center;
-  }
-  .modal-body {
-    flex-direction: column;
-  }
-  .modal-image, .modal-details {
-    width: 100%;
-  }
-  .cart-checkout-container {
-    flex-direction: column;
-  }
-  .cart-summary-total {
-    position: static;
-    width: 100%;
-  }
-}
 /* --- ESTILOS RESPONSIVE PARA MENÚ HAMBURGUESA --- */
 
-/* 1. Botón Hamburguesa (Oculto en PC, visible en mobile) */
+/* 💥 1. BOTÓN HAMBURGUESA (EL FIX ESTÁ AQUÍ) 💥 */
 .hamburger-button {
-  display: none; /* Oculto por defecto */
+  display: none; /* 👈 ESTA ES LA CLAVE: Oculto por defecto en PC */
   background: none;
   border: none;
-  font-size: 2rem;
-  color: var(--primary-color);
-  cursor: pointer;
-  z-index: 1001; /* Encima del header */
-}
-
-/* 2. Estilos del Menú Lateral (Drawer) */
-.mobile-menu-drawer {
-  position: fixed; /* Se queda fijo en la pantalla */
-  top: 0;
-  left: 0;
-  width: 280px; /* Ancho del menú lateral */
-  height: 100%;
-  background-color: white;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-  z-index: 9999; /* ¡Por encima de todo! */
-  
-  /* Animación: empieza oculto fuera de la pantalla */
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
-}
-
-.mobile-menu-drawer.open {
-  transform: translateX(0); /* Se muestra */
-}
-
-.mobile-menu-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  cursor: pointer;
-}
-
-.mobile-nav-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 60px; /* Espacio para el botón de cerrar */
-}
-
-.mobile-nav-header {
-  padding: 10px 20px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #888;
-  text-transform: uppercase;
-  background-color: #f4f4f4;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-}
-
-.mobile-nav-link {
-  display: block;
-  padding: 15px 20px;
-  color: var(--primary-color);
-  text-decoration: none;
-  font-size: 1.1rem;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.mobile-nav-link:hover {
-  background-color: #f9f9f9;
-}
-
-
-/* --- @media query (La Magia) --- */
-/* Estilos que se aplican SOLO si la pantalla es de 900px o menos */
-@media (max-width: 900px) {
-
-  /* 1. Ocultamos el menú de PC */
-  .desktop-nav {
-    display: none;
-  }
-
-  /* 2. Mostramos el botón hamburguesa */
-  .hamburger-button {
-    display: block;
-    order: -1; /* Lo pone primero en el header */
-  }
-
-  /* 3. Ajustamos el Header para mobile */
-  header {
-    justify-content: space-between;
-  }
-  
-  .header-logo-link {
-    /* Centramos el logo que queda */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  header h1 {
-     font-size: 1.2rem; /* Achicamos el logo */
-  }
-  .sub-sublimacion {
-    display: none; /* Ocultamos el subtitulo "Sublimacion" */
-  }
-
-  /* 4. Ocultamos el buscador (ocupa mucho espacio) */
-  .search-bar {
-    display: none; 
-  }
-
-  /* 5. Ajustamos el carrito (lo movemos un poco) */
-  .cart-link {
-    padding: 8px; /* Hacemos el área de click más chica */
-  }
-  
-  /* Ajustamos el responsive que ya tenías */
-  @media (max-width: 768px) {
-    header {
-      flex-direction: row; /* Sobreescribimos tu 'column' para que se vea bien */
-      height: var(--header-height); /* Mantenemos la altura fija */
-    }
-  }
-}
-/* --- NUEVOS ESTILOS RESPONSIVE --- */
-
-/* Ajustes generales para el app-container en mobile */
-@media (max-width: 900px) {
-  .app-container {
-    overflow-x: hidden; /* Evita scroll horizontal por si acaso */
-  }
-}
-
-/* 1. Botón Hamburguesa (Ahora con texto "Menú" y mejor alineación) */
-.hamburger-button {
-  display: none; /* Oculto por defecto en PC */
-  background: none;
-  border: none;
-  font-size: 1.5rem; /* Achicamos un poco el ícono */
+  font-size: 1.5rem;
   color: var(--primary-color);
   cursor: pointer;
   z-index: 1001;
-  padding: 0 10px; /* Espacio alrededor del botón */
-  display: flex; /* Para alinear ícono y texto */
+  padding: 0 10px;
   align-items: center;
-  gap: 5px; /* Espacio entre el ícono y el texto */
+  gap: 5px;
 }
 
 .hamburger-text {
-  font-size: 0.9rem; /* Tamaño del texto "Menú" */
+  font-size: 0.9rem;
   font-weight: bold;
 }
 
@@ -760,14 +594,14 @@ footer {
   top: 0;
   left: 0;
   width: 280px;
-  max-width: 80vw; /* Máximo 80% del ancho de la vista */
+  max-width: 80vw;
   height: 100%;
   background-color: white;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
-  display: flex; /* Para organizar el botón de cerrar y el contenido */
+  display: flex;
   flex-direction: column;
 }
 
@@ -777,21 +611,20 @@ footer {
 
 .mobile-menu-close {
   position: absolute;
-  top: 15px; /* Más abajo para no chocar */
+  top: 15px;
   right: 15px;
   background: none;
   border: none;
-  font-size: 2rem; /* Achicamos un poco la X */
+  font-size: 2rem;
   color: var(--primary-color);
   cursor: pointer;
-  z-index: 10000; /* Aseguramos que la X esté siempre encima */
+  z-index: 10000;
 }
 
-/* 💥 ESTO HACE QUE EL CONTENIDO DEL MENÚ SEA SCROLLEABLE 💥 */
 .mobile-menu-content-scroll {
-  flex-grow: 1; /* Para que ocupe todo el espacio restante */
-  overflow-y: auto; /* ¡AQUI ESTÁ LA MAGIA DEL SCROLL! */
-  padding-top: 60px; /* Espacio para que el contenido no quede debajo de la X */
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-top: 60px;
 }
 
 .mobile-nav-list {
@@ -827,33 +660,36 @@ footer {
 
 /* --- @media query (La Magia Responsiva) --- */
 @media (max-width: 900px) {
-
+  
+  /* 1. Ocultamos el menú de PC */
   .desktop-nav {
     display: none;
   }
 
+  /* 2. Mostramos el botón hamburguesa (ahora con flex) */
   .hamburger-button {
-    display: flex; /* Ahora siempre visible en mobile */
+    display: flex; /* 👈 AHORA SÍ: Visible solo en mobile */
     order: -1; 
   }
 
+  /* 3. Ajustamos el Header para mobile */
   header {
     justify-content: space-between;
-    padding: 10px 15px; /* Ajustamos padding del header */
+    padding: 10px 15px;
   }
   
   .header-logo-link {
-    position: static; /* Quitamos la posición absoluta para que fluya */
-    transform: none; /* Quitamos el transform */
-    flex-grow: 1; /* Para que el logo ocupe el espacio central */
-    text-align: center; /* Centramos el logo */
-    margin: 0 10px; /* Margen para no chocar con hamburguesa/carrito */
+    position: static;
+    transform: none;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 10px;
   }
   
   header h1 {
      font-size: 1.2rem;
-     justify-content: center; /* Centramos el texto dentro del h1 */
-     margin: 0; /* Aseguramos que no haya margen extra */
+     justify-content: center;
+     margin: 0;
   }
   .sub-sublimacion {
     display: none;
@@ -867,29 +703,28 @@ footer {
     padding: 8px;
   }
   
-  /* Ajuste para que el logo no sea demasiado grande en pantallas pequeñas */
   header h1 img {
     height: 25px; 
     margin-right: 5px;
   }
 
-  /* --- 💥 MODAL RESPONSIVE para pantallas pequeñas (ej: iPhone) 💥 --- */
+  /* --- MODAL RESPONSIVE (para iPhone) --- */
   .modal-content {
-    width: 95%; /* Más ancho en mobile */
-    max-width: 95vw; /* Aseguramos que no se salga */
-    max-height: 90vh; /* Máximo 90% de la altura de la vista */
-    overflow-y: auto; /* ¡MUY IMPORTANTE para el scroll interno del modal! */
-    padding: 20px 15px; /* Reducimos el padding */
+    width: 95%;
+    max-width: 95vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px 15px;
   }
 
   .modal-body {
-    flex-direction: column; /* La imagen arriba, detalles abajo */
-    gap: 20px; /* Menos espacio entre elementos */
+    flex-direction: column;
+    gap: 20px;
   }
 
   .modal-image {
     width: 100%;
-    height: 250px; /* Altura fija para la imagen */
+    height: 250px;
   }
 
   .modal-details {
@@ -897,15 +732,42 @@ footer {
   }
 
   .modal-close-button {
-    font-size: 2em; /* La X un poco más grande y fácil de tocar */
+    font-size: 2em;
     top: 5px;
     right: 5px;
   }
 }
 
-/* Ajuste adicional para pantallas muy pequeñas, si el texto "Menú" molesta */
+/* Ajuste adicional para pantallas muy pequeñas */
 @media (max-width: 480px) {
   .hamburger-text {
-    display: none; /* Ocultamos el texto "Menú" si la pantalla es muy chica */
+    display: none; /* Ocultamos el texto "Menú" */
+  }
+}
+
+/* 💥 FIX PARA TU ANTIGUO BREAKPOINT DE 768px 💥
+   (Sobreescribimos las reglas que tenías antes para que no entren en conflicto) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row; /* Mantenemos la fila */
+    height: var(--header-height); /* Mantenemos la altura */
+  }
+  
+  .search-bar {
+    display: none; /* Nos aseguramos que esté oculto */
+  }
+
+  .modal-body {
+    flex-direction: column; /* Esto ya lo hicimos arriba, pero lo reforzamos */
+  }
+  .modal-image, .modal-details {
+    width: 100%;
+  }
+  .cart-checkout-container {
+    flex-direction: column;
+  }
+  .cart-summary-total {
+    position: static;
+    width: 100%;
   }
 }
