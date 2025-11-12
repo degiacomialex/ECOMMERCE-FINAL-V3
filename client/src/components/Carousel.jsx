@@ -3,7 +3,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import '../App.css';
 
-// Estas rutas son las mismas que tenías en App.jsx
+// 💥 CORRECCIÓN: Volvemos a las rutas originales.
+// Vite se encargará de agregar el prefijo /ECOMMERCE-FINAL-V3/
+// automáticamente durante el build.
 import carrusel1 from '/images/carrusel1.jpeg'; 
 import carrusel2 from '/images/carrusel2.jpeg';
 import carrusel3 from '/images/carrusel3.jpeg';
@@ -15,6 +17,7 @@ const carouselData = [
 ];
 
 const Carousel = () => {
+  // ... (el resto del código del carrusel queda exactamente igual)
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselSize = carouselData.length;
 

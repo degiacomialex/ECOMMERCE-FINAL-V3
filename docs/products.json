@@ -1,0 +1,14 @@
+[
+    { "id": 1, "category": "RIÑONERAS", "name": "Riñonera Lobo", "price": 15000, "image": "/ECOMMERCE-FINAL-V3/images/producto1.jpeg", "description": "Riñonera de tela sublimada con diseño de lobo. Ideal para paseos y deporte." },
+    { "id": 2, "category": "SET DE MATE", "name": "Set Matero Floral", "price": 18000, "image": "/ECOMMERCE-FINAL-V3/images/producto2.jpeg", "description": "Set completo de mate con diseño floral, incluye termo, mate, yerbero y azucarero." },
+    { "id": 3, "category": "MOCHILAS INFANTILES", "name": "Mochila Cars", "price": 25000, "image": "/ECOMMERCE-FINAL-V3/images/producto3.jpeg", "description": "Mochila infantil con diseño de la película Cars. Amplia y resistente, perfecta para el jardín." },
+    { "id": 4, "category": "TAZAS Y TERMOS", "name": "Termo Personalizado", "price": 20000, "image": "/ECOMMERCE-FINAL-V3/images/producto4.jpeg", "description": "Termo de acero inoxidable personalizado a tu gusto. Mantiene la temperatura por horas." },
+    { "id": 5, "category": "TAZAS Y TERMOS", "name": "Set Tazas", "price": 9000, "image": "/ECOMMERCE-FINAL-V3/images/producto1.jpeg", "description": "Juego de dos tazas de cerámica sublimadas con diseños a elección." },
+    { "id": 6, "category": "RIÑONERAS", "name": "Riñonera Gato", "price": 15500, "image": "/ECOMMERCE-FINAL-V3/images/producto2.jpeg", "description": "Riñonera con estampado de gatos juguetones. Ajustable y con varios compartimentos." },
+    { "id": 7, "category": "REGALOS PADRE", "name": "Set Asado Papá", "price": 30000, "image": "/ECOMMERCE-FINAL-V3/images/producto3.jpeg", "description": "Set de asado premium que incluye delantal y manopla sublimados con diseños para el Día del Padre." },
+    { "id": 8, "category": "ESCOLAR", "name": "Cartuchera", "price": 5000, "image": "/ECOMMERCE-FINAL-V3/images/producto4.jpeg", "description": "Cartuchera escolar amplia, totalmente sublimada con el personaje o diseño que prefieras." },
+    { "id": 9, "category": "RIÑONERAS", "name": "Riñonera Unicornio", "price": 16000, "image": "/ECOMMERCE-FINAL-V3/images/producto1.jpeg", "description": "Riñonera infantil con diseño de unicornio." },
+    { "id": 10, "category": "SET DE MATE", "name": "Set de Mate River", "price": 19500, "image": "/ECOMMERCE-FINAL-V3/images/producto2.jpeg", "description": "Set de mate con diseño del club River Plate." },
+    { "id": 11, "category": "MOCHILAS INFANTILES", "name": "Mochila Spiderman", "price": 26000, "image": "/ECOMMERCE-FINAL-V3/images/producto3.jpeg", "description": "Mochila con diseño de Spiderman." },
+    { "id": 12, "category": "TAZAS Y TERMOS", "name": "Taza con Frase", "price": 4500, "image": "/ECOMMERCE-FINAL-V3/images/producto4.jpeg", "description": "Taza de cerámica con frase motivacional." }
+  ]

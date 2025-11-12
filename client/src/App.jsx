@@ -1,11 +1,9 @@
 // client/src/App.jsx
 
-// 💥 AÑADIMOS 'useEffect'
 import React, { useState, useEffect } from 'react';
 import './App.css'; 
 
 // --- 1. IMPORTACIÓN DE COMPONENTES ---
-// (Todos tus componentes que ya creamos)
 import Footer from './components/Footer';
 import HeaderBar from './components/HeaderBar';
 import NavBar from './components/NavBar';
@@ -15,34 +13,28 @@ import CartView from './components/CartView';
 import Carousel from './components/Carousel';
 import ProductGallery from './components/ProductGallery';
 
-// 💥 BORRAMOS los 'import' de las imágenes de productos (producto1, etc.)
-// 💥 BORRAMOS el array 'productsData = [...]' de aquí.
-
 // --- 3. COMPONENTE PRINCIPAL (El "Cerebro") ---
 const App = () => {
-  
-  // 💥 NUEVO ESTADO: Un array vacío para guardar los productos del servidor
-  const [products, setProducts] = useState([]); 
 
-  // --- Estados Globales ---
+  const [products, setProducts] = useState([]); 
   const [cartItems, setCartItems] = useState([]);
   const [filterCategory, setFilterCategory] = useState('TODOS');
-  const [currentView, setCurrentView] = useState('home'); // 'home' o 'cart'
+  const [currentView, setCurrentView] = useState('home');
   const [modalProduct, setModalProduct] = useState(null); 
   const [toast, setToast] = useState({ show: false, message: '' }); 
 
-  // 💥 NUEVO useEffect: Se ejecuta 1 vez al cargar la página
   useEffect(() => {
-    // 1. Pide los productos a tu backend (que debe estar corriendo)
-    fetch('http://localhost:3001/api/products')
-      .then(response => response.json()) // 2. Convierte la respuesta
+    // 💥 CORRECCIÓN: Pedimos el JSON estático
+    // La ruta base '/ECOMMERCE-FINAL-V3/' la configuramos en vite.config.js
+    fetch('/ECOMMERCE-FINAL-V3/products.json') 
+      .then(response => response.json())
       .then(data => {
-        setProducts(data); // 3. Guarda los productos en el estado 'products'
+        setProducts(data);
       })
       .catch(error => {
         console.error("Error al traer los productos:", error);
       });
-  }, []); // El '[]' vacío significa "ejecútate solo una vez"
+  }, []);
 
 
   // --- Lógica del Carrito (Queda igual) ---
@@ -71,17 +63,17 @@ const App = () => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === productId);
       if (!existingItem) return prevItems; 
-      
+
       if (existingItem.quantity <= 1) {
         return prevItems.filter((item) => item.id !== productId);
       }
-      
+
       return prevItems.map((item) =>
         item.id === productId ? { ...item, quantity: item.quantity - 1 } : item
       );
     });
   };
-  
+
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
@@ -89,13 +81,12 @@ const App = () => {
     alert("Iniciando proceso de pago con Mercado Pago (simulado)...");
   };
 
-  // --- Lógica de Filtros y Modales ---
+  // --- Lógica de Filtros y Modales (Queda igual) ---
   const handleFilter = (category) => {
     setFilterCategory(category);
     setModalProduct(null); 
   };
 
-  // 💥 CAMBIO: Ahora filtra sobre el estado 'products', no 'productsData'
   const filteredProducts = products.filter(product => 
     filterCategory === 'TODOS' || 
     product.category === filterCategory ||
@@ -103,7 +94,6 @@ const App = () => {
   );
 
   const handleVerDetalle = (productId) => {
-    // 💥 CAMBIO: Ahora busca en el estado 'products', no 'productsData'
     const product = products.find(p => p.id === productId);
     setModalProduct(product);
   };
@@ -114,10 +104,9 @@ const App = () => {
 
 
   // --- 4. RENDERIZADO (El "Cuerpo") ---
-  // (Esta parte queda exactamente igual que antes)
   return (
     <div className="app-container">
-      
+
       <ProductModal 
         product={modalProduct} 
         onClose={closeModal} 
