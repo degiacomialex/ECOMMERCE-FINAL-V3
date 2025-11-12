@@ -3,14 +3,13 @@
 import React from 'react';
 import '../App.css';
 
-// Recibe todo por props. Este componente solo "muestra" datos.
 const ProductGallery = ({ 
-  products,         // La lista de productos ya filtrada
-  filterCategory,   // El nombre de la categoría seleccionada
-  onShowDetails,    // La función para abrir el modal
-  onAddToCart       // La función para añadir al carrito
+  products,
+  filterCategory,
+  onShowDetails,
+  onAddToCart 
 }) => {
-
+  
   return (
     <div>
       <h3 style={{ borderBottom: '1px solid #ccc', paddingBottom: '5px', textAlign: 'center' }}>
@@ -22,28 +21,28 @@ const ProductGallery = ({
             <img src={product.image} alt={product.name} />
             <h4>{product.name}</h4>
             <p>${product.price.toLocaleString('es-AR')}</p>
+            
+            {/* 💥 2. AÑADIMOS el botón visible "Ver Detalle" 💥 */}
+            <button 
+              className="view-details-button" 
+              onClick={() => onShowDetails(product.id)}
+            >
+              Ver Detalle
+            </button>
 
+            {/* El overlay para "Añadir al carrito" sigue funcionando al pasar el mouse */}
             <div className="product-actions-overlay">
               <button 
                 className="overlay-button" 
-                onClick={() => onShowDetails(product.id)} // Llama a la función del prop
-              >
-                VER DETALLE
-              </button>
-              <button 
-                className="overlay-button" 
                 style={{ backgroundColor: 'var(--accent-color)' }}
-                onClick={() => onAddToCart(product)} // Llama a la función del prop
+                onClick={() => onAddToCart(product)}
               >
                 AÑADIR AL CARRITO
               </button>
             </div>
 
-            {/* Este botón estaba en tu código original. 
-               Como ahora tienes el overlay, quizás quieras borrarlo. 
-               Lo dejo comentado por si acaso. 
-            */}
-            {/* <button onClick={() => onAddToCart(product)}>AÑADIR AL CARRITO</button> */}
+            {/* El botón original "AÑADIR AL CARRITO" que estaba abajo ahora está
+                dentro del overlay, por lo que lo quitamos de aquí para no duplicar. */}
           </div>
         ))}
       </div>

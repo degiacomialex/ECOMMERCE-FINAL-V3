@@ -1,9 +1,8 @@
 // client/src/components/NavBar.jsx
 
 import React from 'react';
-import '../App.css'; // Usamos los estilos globales
+import '../App.css'; 
 
-// 💥 Movimos la estructura del menú de App.jsx aquí
 const menuItems = [
   { 
     name: 'INDUMENTARIA PERSONALIZADA', 
@@ -30,30 +29,43 @@ const menuItems = [
     dropdown: true, 
     subcategories: ['Ropa Corporativa', 'Merchandising'] 
   },
-  { name: 'TAZAS', link: '#tazas' },
-  { name: 'GUÍA DE TALLES', link: '#guiatalles' },
+  // 💥 CAMBIO: Los links simples ahora también tienen un 'filterKey'
+  { name: 'TAZAS', filterKey: 'TAZAS' },
+  { name: 'GUÍA DE TALLES', filterKey: 'GUIA DE TALLES' }, // (O puedes poner un link a otra página)
 ];
 
 
-// Este componente también recibe props de App.jsx
 const NavBar = ({ onSetView, onSetFilter }) => {
+
+  // 💥 NUEVA FUNCIÓN:
+  // Un solo manejador de clicks para poner todo en 'home' y filtrar
+  const handleNavClick = (filter) => {
+    onSetFilter(filter);
+    onSetView('home');
+  };
+
   return (
     <nav className="bottom-menu">
       <ul className="main-nav">
         {menuItems.map(item => (
           <li key={item.name} className={`nav-item ${item.dropdown ? 'has-dropdown' : ''}`}>
-            <a href={item.link || '#'} className="nav-link" onClick={() => onSetView('home')}>
+
+            {/* 💥 Lógica de click actualizada 💥 */}
+            <a 
+              href="#" // Usamos '#' para evitar que la página recargue
+              className="nav-link" 
+              // Si no es un dropdown, filtra al hacer click
+              onClick={() => !item.dropdown && handleNavClick(item.filterKey || item.name)}
+            >
               {item.name}
             </a>
+
+            {/* Los dropdowns funcionan igual, pero usando la nueva función */}
             {item.dropdown && (
               <ul className="dropdown-menu">
                 {item.subcategories.map(sub => (
                   <li key={sub}>
-                    {/* * Usamos las props: 
-                     * 1. Llamamos a onSetFilter con la subcategoría
-                     * 2. Llamamos a onSetView para asegurarnos de volver al 'home'
-                    */}
-                    <button onClick={() => { onSetFilter(sub); onSetView('home'); }}>
+                    <button onClick={() => handleNavClick(sub)}>
                       {sub}
                     </button>
                   </li>

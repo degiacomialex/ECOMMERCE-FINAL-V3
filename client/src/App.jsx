@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './App.css'; 
+import AboutUs from './components/AboutUs'; // <-- AÑADE ESTA LÍNEA
 
 // --- 1. IMPORTACIÓN DE COMPONENTES ---
 import Footer from './components/Footer';
@@ -127,6 +128,8 @@ const App = () => {
         {currentView === 'home' ? (
           <>
             <Carousel />
+
+            <AboutUs />
 
             <ProductGallery
               products={filteredProducts}

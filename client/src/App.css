@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 :root {
   /* 💥 PALETA DE COLORES PROFESIONAL Y OSCURA 💥 */
-  --primary-color: #343a40;    /* Gris muy oscuro (Base para Menú/Footer/Texto Principal) */
-  --secondary-color: #007bff;   /* Azul eléctrico profesional (Acentos/Botones) */
-  --accent-color: #e74c3c;     /* Rojo/Coral (Precios/Acciones clave) */
-  --background-light: #f8f9fa; /* Fondo muy claro (casi blanco) */
+  --primary-color: #343a40; 
+  --secondary-color: #007bff; 
+  --accent-color: #e74c3c; 
+  --background-light: #f8f9fa;
   --header-height: 60px;
   --menu-height: 40px;
   --card-shadow: rgba(0, 0, 0, 0.08);
@@ -49,6 +49,8 @@ header {
   position: sticky;
   top: 0; 
   z-index: 1000; 
+  /* 💥 7. Quita el espacio entre el header y el menú 💥 */
+  margin-bottom: 0;
 }
 header h1 {
   display: flex;
@@ -93,11 +95,9 @@ header h1 {
   background-color: var(--primary-color);
   height: var(--menu-height); 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
   position: sticky;
   top: var(--header-height); 
   z-index: 999; 
-  
   display: flex;
   align-items: center;
   padding: 0 20px;
@@ -108,24 +108,31 @@ header h1 {
   display: flex;
   margin: 0;
   padding: 0;
+  /* 💥 6. Centra los elementos del menú principal 💥 */
+  justify-content: center;
+  width: 100%; /* Para que el centrado funcione correctamente */
 }
 
 .nav-item {
   position: relative; 
   margin-right: 20px;
 }
+/* Ocultamos el margen del último item para un centrado perfecto */
+.main-nav .nav-item:last-child {
+  margin-right: 0;
+}
+
 
 .nav-link {
   color: white;
   text-decoration: none;
-  padding: 10px 12px; /* Reducimos el padding lateral (antes 15px) */
+  padding: 10px 12px;
   display: block;
-  font-weight: 700; /* Usamos el peso bold de Roboto */
-  font-size: 0.8em; /* Reducimos el tamaño de la fuente (antes 0.9em) */
-  line-height: 1.2; /* Ajustamos el espacio vertical */
+  font-weight: 700;
+  font-size: 0.8em;
+  line-height: 1.2;
   transition: background-color 0.2s, color 0.2s;
   text-transform: uppercase;
-  /* Aseguramos que el texto no se rompa si el menú es muy largo */
   white-space: nowrap; 
 }
 
@@ -179,18 +186,33 @@ header h1 {
   margin-bottom: 20px;
 }
 
+/* 💥 8. ESTILOS PARA LA SECCIÓN "SOBRE NOSOTROS" 💥 */
+.about-us-container {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.about-us-container h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+
 /* --- CARRUSEL FIX (Horizontal) --- */
 .carousel-container {
   overflow: hidden; 
   position: relative;
-  width: 80%; /* Lo centramos y reducimos ligeramente */
+  width: 80%;
   margin: 0 auto 40px auto; 
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-slide {
-  display: flex; /* <-- FIX CRÍTICO: Imágenes en línea */
+  display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%; 
 }
@@ -198,7 +220,7 @@ header h1 {
 .carousel-item {
   min-width: 100%; 
   flex-shrink: 0;
-  height: 400px; /* Altura fija para el carrusel */
+  height: 400px;
 }
 
 .carousel-item img {
@@ -213,8 +235,7 @@ header h1 {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
   padding: 20px;
-  /* Se quita el flex contenedor para que ocupe el 100% */
-  max-width: 1200px; /* Centrado para un look profesional */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -225,14 +246,13 @@ header h1 {
   box-shadow: 0 6px 15px var(--card-shadow); 
   text-align: center;
   position: relative;
-  padding-bottom: 50px; 
-  
-  /* 💥 EFECTO SUTIL Y FINO 💥 */
+  /* 💥 AUMENTAMOS EL PADDING PARA DAR ESPACIO A LOS BOTONES 💥 */
+  padding-bottom: 60px; 
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .product-card:hover {
-  transform: translateY(-5px); /* Movimiento leve hacia arriba */
+  transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
 }
 
@@ -254,19 +274,24 @@ header h1 {
   margin-bottom: 10px;
 }
 
-.product-card button {
-  position: absolute;
-  bottom: 15px;
-  left: 10%;
-  width: 80%;
-  padding: 10px;
-  background-color: var(--secondary-color);
-  color: white;
-  border: none;
-  border-radius: 6px;
+/* 💥 2. ESTILOS PARA EL NUEVO BOTÓN "VER DETALLE" 💥 */
+.view-details-button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  font-size: 0.8rem;
   cursor: pointer;
-  font-weight: 600;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px; /* Le damos un poco de espacio */
+  transition: background-color 0.2s;
 }
+
+.view-details-button:hover {
+  background-color: #e0e0e0;
+}
+
 
 /* Overlay de Acciones (Botones de Ver Detalle/Añadir) */
 .product-actions-overlay {
@@ -544,25 +569,25 @@ footer {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   header {
-      flex-direction: column;
-      height: auto;
+    flex-direction: column;
+    height: auto;
   }
   .search-bar {
-      margin-top: 10px;
-      width: 100%;
-      justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    justify-content: center;
   }
   .modal-body {
-      flex-direction: column;
+    flex-direction: column;
   }
   .modal-image, .modal-details {
-      width: 100%;
+    width: 100%;
   }
   .cart-checkout-container {
-      flex-direction: column;
+    flex-direction: column;
   }
   .cart-summary-total {
-      position: static;
-      width: 100%;
+    position: static;
+    width: 100%;
   }
 }
