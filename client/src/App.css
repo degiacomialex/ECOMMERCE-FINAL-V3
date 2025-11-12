@@ -86,7 +86,7 @@ header h1 {
   opacity: 0.9;
 }
 
-/* 💥 MENÚ DE ESCRITORIO (PC) 💥 */
+/* MENÚ DE ESCRITORIO (PC) */
 .bottom-menu.desktop-nav {
   background-color: var(--primary-color);
   height: var(--menu-height); 
@@ -166,7 +166,6 @@ header h1 {
   background-color: #f1f1f1;
 }
 
-/* 💥 ESTILOS PARA LOS NUEVOS LINKS DEL DROPDOWN 💥 */
 .dropdown-link {
   color: var(--primary-color);
   padding: 10px 15px;
@@ -569,9 +568,8 @@ footer {
 
 /* --- ESTILOS RESPONSIVE PARA MENÚ HAMBURGUESA --- */
 
-/* 💥 1. BOTÓN HAMBURGUESA (EL FIX ESTÁ AQUÍ) 💥 */
 .hamburger-button {
-  display: none; /* 👈 ESTA ES LA CLAVE: Oculto por defecto en PC */
+  display: none; 
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -588,7 +586,6 @@ footer {
   font-weight: bold;
 }
 
-/* 2. Menú Lateral (Drawer) */
 .mobile-menu-drawer {
   position: fixed;
   top: 0;
@@ -661,14 +658,15 @@ footer {
 /* --- @media query (La Magia Responsiva) --- */
 @media (max-width: 900px) {
   
-  /* 1. Ocultamos el menú de PC */
-  .desktop-nav {
-    display: none;
+  /* 💥 1. Ocultamos el menú de PC 💥
+     ¡ESTA ES LA REGLA CORREGIDA! */
+  .bottom-menu.desktop-nav {
+    display: none; 
   }
 
-  /* 2. Mostramos el botón hamburguesa (ahora con flex) */
+  /* 2. Mostramos el botón hamburguesa */
   .hamburger-button {
-    display: flex; /* 👈 AHORA SÍ: Visible solo en mobile */
+    display: flex; 
     order: -1; 
   }
 
@@ -741,24 +739,23 @@ footer {
 /* Ajuste adicional para pantallas muy pequeñas */
 @media (max-width: 480px) {
   .hamburger-text {
-    display: none; /* Ocultamos el texto "Menú" */
+    display: none; 
   }
 }
 
-/* 💥 FIX PARA TU ANTIGUO BREAKPOINT DE 768px 💥
-   (Sobreescribimos las reglas que tenías antes para que no entren en conflicto) */
+/* FIX PARA TU ANTIGUO BREAKPOINT DE 768px */
 @media (max-width: 768px) {
   header {
-    flex-direction: row; /* Mantenemos la fila */
-    height: var(--header-height); /* Mantenemos la altura */
+    flex-direction: row; 
+    height: var(--header-height); 
   }
   
   .search-bar {
-    display: none; /* Nos aseguramos que esté oculto */
+    display: none; 
   }
 
   .modal-body {
-    flex-direction: column; /* Esto ya lo hicimos arriba, pero lo reforzamos */
+    flex-direction: column; 
   }
   .modal-image, .modal-details {
     width: 100%;
