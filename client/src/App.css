@@ -164,6 +164,21 @@ header h1 {
 .dropdown-menu li button:hover {
   background-color: #f1f1f1;
 }
+/* 💥 ESTILOS PARA LOS NUEVOS LINKS DEL DROPDOWN 💥 */
+.dropdown-link {
+  color: var(--primary-color);
+  padding: 10px 15px;
+  text-align: left;
+  display: block; /* Importante para que ocupe todo el <li> */
+  text-decoration: none; /* Quitamos el subrayado de Link */
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-link:hover {
+  background-color: #f1f1f1;
+}
 
 .main-content {
   padding: 20px;

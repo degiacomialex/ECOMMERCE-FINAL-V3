@@ -1,24 +1,25 @@
-// client/src/components/CartView.jsx
+// client/src/pages/CartPage.jsx
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
 
-const CartView = ({ 
+export const CartPage = ({ 
   cartItems, 
   totalItems, 
   totalPrice, 
   onRemoveFromCart, 
-  onCheckout, 
-  onBackToStore 
+  onCheckout 
 }) => {
-
+  
   return (
     <div className="cart-view-page">
-      <button className="back-button" onClick={onBackToStore}>
+      <Link to="/" className="back-button">
         ← Volver a la tienda
-      </button>
+      </Link>
+      
       <h2 className="page-title">Tu Carrito ({totalItems} Productos)</h2>
-
+      
       {cartItems.length === 0 ? (
         <p className="empty-cart-message">El carrito está vacío. ¡Añade algo genial!</p>
       ) : (
@@ -37,7 +38,7 @@ const CartView = ({
               </li>
             ))}
           </ul>
-
+          
           <div className="cart-summary-total">
             <div className="total-label">Total a Pagar:</div>
             <div className="total-amount">${totalPrice.toLocaleString('es-AR')}</div>
@@ -51,4 +52,4 @@ const CartView = ({
   );
 };
 
-export default CartView;
+// 💥 NOTA: No hay 'export default'
