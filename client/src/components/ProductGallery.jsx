@@ -22,27 +22,25 @@ const ProductGallery = ({
             <h4>{product.name}</h4>
             <p>${product.price.toLocaleString('es-AR')}</p>
             
-            {/* 💥 2. AÑADIMOS el botón visible "Ver Detalle" 💥 */}
-            <button 
-              className="view-details-button" 
-              onClick={() => onShowDetails(product.id)}
-            >
-              Ver Detalle
-            </button>
-
-            {/* El overlay para "Añadir al carrito" sigue funcionando al pasar el mouse */}
-            <div className="product-actions-overlay">
+            {/* 💥 NUEVO CONTENEDOR DE BOTONES VISIBLES 💥 */}
+            <div className="product-card-actions">
               <button 
-                className="overlay-button" 
-                style={{ backgroundColor: 'var(--accent-color)' }}
+                className="view-details-button" 
+                onClick={() => onShowDetails(product.id)}
+              >
+                Ver Detalle
+              </button>
+              
+              <button 
+                className="add-to-cart-button" 
                 onClick={() => onAddToCart(product)}
               >
-                AÑADIR AL CARRITO
+                Añadir al Carrito
               </button>
             </div>
 
-            {/* El botón original "AÑADIR AL CARRITO" que estaba abajo ahora está
-                dentro del overlay, por lo que lo quitamos de aquí para no duplicar. */}
+            {/* 💥 HEMOS ELIMINADO EL DIV 'product-actions-overlay' 💥 */}
+
           </div>
         ))}
       </div>

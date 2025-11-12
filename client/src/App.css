@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 :root {
-  /* 💥 PALETA DE COLORES PROFESIONAL Y OSCURA 💥 */
   --primary-color: #343a40; 
   --secondary-color: #007bff; 
   --accent-color: #e74c3c; 
@@ -18,7 +17,6 @@
   text-rendering: optimizeLegibility;
 }
 
-/* --- FIX CRÍTICO para Sticky Header (NO TOCAR) --- */
 html, body, #root {
   height: 100%;
   margin: 0;
@@ -30,14 +28,13 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   height: 100vh; 
-  overflow-y: auto; /* CRÍTICO: Aquí ocurre el scroll principal */
+  overflow-y: auto;
   min-width: 100%;
   background-color: var(--background-light);
   color: var(--primary-color);
   line-height: 1.6;
 }
 
-/* 💥 HEADER STICKY 💥 */
 header {
   background-color: white;
   padding: 10px 20px;
@@ -49,7 +46,6 @@ header {
   position: sticky;
   top: 0; 
   z-index: 1000; 
-  /* 💥 7. Quita el espacio entre el header y el menú 💥 */
   margin-bottom: 0;
 }
 header h1 {
@@ -90,7 +86,6 @@ header h1 {
   opacity: 0.9;
 }
 
-/* 💥 MENÚ PROFESIONAL (STIKY: top: 60px) 💥 */
 .bottom-menu {
   background-color: var(--primary-color);
   height: var(--menu-height); 
@@ -108,20 +103,17 @@ header h1 {
   display: flex;
   margin: 0;
   padding: 0;
-  /* 💥 6. Centra los elementos del menú principal 💥 */
   justify-content: center;
-  width: 100%; /* Para que el centrado funcione correctamente */
+  width: 100%;
 }
 
 .nav-item {
   position: relative; 
   margin-right: 20px;
 }
-/* Ocultamos el margen del último item para un centrado perfecto */
 .main-nav .nav-item:last-child {
   margin-right: 0;
 }
-
 
 .nav-link {
   color: white;
@@ -140,7 +132,6 @@ header h1 {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Dropdown (Submenú al hacer hover) */
 .nav-item.has-dropdown:hover .dropdown-menu {
   display: block;
 }
@@ -174,7 +165,6 @@ header h1 {
   background-color: #f1f1f1;
 }
 
-/* --- Contenido Principal y Carrusel --- */
 .main-content {
   padding: 20px;
   flex-grow: 1;
@@ -186,7 +176,6 @@ header h1 {
   margin-bottom: 20px;
 }
 
-/* 💥 8. ESTILOS PARA LA SECCIÓN "SOBRE NOSOTROS" 💥 */
 .about-us-container {
   text-align: center;
   padding: 40px 20px;
@@ -200,8 +189,6 @@ header h1 {
   font-size: 1.8rem;
 }
 
-
-/* --- CARRUSEL FIX (Horizontal) --- */
 .carousel-container {
   overflow: hidden; 
   position: relative;
@@ -229,7 +216,6 @@ header h1 {
   object-fit: cover;
 }
 
-/* --- Galería y Tarjetas (Hover Sutil y Fino) --- */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -246,8 +232,8 @@ header h1 {
   box-shadow: 0 6px 15px var(--card-shadow); 
   text-align: center;
   position: relative;
-  /* 💥 AUMENTAMOS EL PADDING PARA DAR ESPACIO A LOS BOTONES 💥 */
-  padding-bottom: 60px; 
+  /* 💥 AUMENTAMOS EL PADDING PARA DOS BOTONES 💥 */
+  padding-bottom: 110px; 
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -274,18 +260,49 @@ header h1 {
   margin-bottom: 10px;
 }
 
-/* 💥 2. ESTILOS PARA EL NUEVO BOTÓN "VER DETALLE" 💥 */
+/* 💥 NUEVO CONTENEDOR DE BOTONES 💥 */
+.product-card-actions {
+  position: absolute; /* Lo fijamos abajo */
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Un botón encima del otro */
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+}
+
+/* 💥 ESTILOS PARA EL BOTÓN DE AÑADIR (VISBLE) 💥 */
+.add-to-cart-button {
+  background-color: var(--secondary-color); /* Color azul */
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 90%; /* Que ocupe casi todo el ancho */
+  transition: background-color 0.2s;
+}
+.add-to-cart-button:hover {
+  background-color: #0056b3; /* Azul más oscuro */
+}
+
+/* 💥 AJUSTAMOS EL BOTÓN "VER DETALLE" PARA QUE COINCIDA 💥 */
 .view-details-button {
   background-color: #f0f0f0;
   color: #333;
   border: 1px solid #ddd;
-  padding: 8px 12px;
-  font-size: 0.8rem;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
   border-radius: 4px;
-  margin-top: 10px;
-  margin-bottom: 10px; /* Le damos un poco de espacio */
+  width: 90%; /* Que ocupe casi todo el ancho */
   transition: background-color 0.2s;
+  margin: 0; /* Reseteamos márgenes viejos */
 }
 
 .view-details-button:hover {
@@ -293,36 +310,11 @@ header h1 {
 }
 
 
-/* Overlay de Acciones (Botones de Ver Detalle/Añadir) */
-.product-actions-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-.product-card:hover .product-actions-overlay {
-  opacity: 1;
-}
-.overlay-button {
-  width: 70%;
-  padding: 10px 15px;
-  background-color: var(--secondary-color);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
+/* 💥 HEMOS ELIMINADO LOS ESTILOS DE: 💥
+ * .product-actions-overlay
+ * .product-card:hover .product-actions-overlay
+ * .overlay-button
+*/
 
 /* --- TOAST NOTIFICATION STYLES --- */
 .toast-container {
