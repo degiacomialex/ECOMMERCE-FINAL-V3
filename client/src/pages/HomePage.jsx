@@ -8,23 +8,23 @@ import AboutUs from '../components/AboutUs';
 import ProductGallery from '../components/ProductGallery';
 
 export const HomePage = ({ 
-  products, 
-  filterCategory, 
-  onShowDetails, 
-  onAddToCart 
-}) => {
-  return (
-    <>
-      <Carousel />
-      
-      <AboutUs />
+        products, 
+        filterCategory, 
+        onShowDetails, 
+        onAddToCart 
+        }) => {
+        return (
+            <>
+            <Carousel />
+            
+            <AboutUs />
 
-      <ProductGallery
-        products={products}
-        filterCategory={filterCategory}
-        onShowDetails={onShowDetails}
-        onAddToCart={onAddToCart}
-      />
-    </>
-  );
-};
+            <ProductGallery
+                products={products}
+                filterCategory={filterCategory}
+                onShowDetails={onShowDetails}
+                onAddToCart={onAddToCart}
+            />
+            </>
+        );
+        };

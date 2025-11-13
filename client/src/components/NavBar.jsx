@@ -10,25 +10,38 @@ const menuItems = [
   { name: 'EGRESADOS', dropdown: true, subcategories: ['Buzos', 'Camperas', 'Remeras', 'Banderas'] },
   { name: 'FECHAS ESPECIALES', dropdown: true, subcategories: ['Día del Padre', 'Día de la Madre', 'Día del Amigo', 'Navidad', 'Otras Fiestas'] },
   { name: 'PARA EMPRESAS', dropdown: true, subcategories: ['Ropa Corporativa', 'Merchandising'] },
-  { name: 'TAZAS', filterKey: 'TAZAS' },
-  { name: 'GUÍA DE TALLES', filterKey: 'GUIA DE TALLES' },
+
+  // 💥 CAMBIO: Diferenciamos "categorías" de "páginas" 💥
+  { name: 'TAZAS', type: 'category', key: 'TAZAS' },
+  { name: 'GUÍA DE TALLES', type: 'category', key: 'GUIA DE TALLES' },
+  { name: 'CONTACTO', type: 'page', path: '/contacto' } // <-- ASÍ ES CORRECTO
 ];
 
 const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
-  
+
   const handleLinkClick = () => {
-    onCloseMenu(); // Cierra el menú al hacer clic en un enlace
+    onCloseMenu();
+  };
+
+  // Función para construir el link correcto
+  const getLink = (item) => {
+    if (item.type === 'page') {
+      return item.path; // ej: "/contacto"
+    }
+    // Por defecto, es una categoría
+    return `/categoria/${item.key || item.name}`; // ej: "/categoria/TAZAS"
   };
 
   return (
     <>
-      {/* --- 1. MENÚ DE ESCRITORIO (Visible solo en PC) --- */}
+      {/* --- MENÚ DE ESCRITORIO --- */}
       <nav className="bottom-menu desktop-nav">
         <ul className="main-nav">
           {menuItems.map(item => (
             <li key={item.name} className={`nav-item ${item.dropdown ? 'has-dropdown' : ''}`}>
+
               {!item.dropdown ? (
-                <Link to={`/categoria/${item.filterKey || item.name}`} className="nav-link">
+                <Link to={getLink(item)} className="nav-link">
                   {item.name}
                 </Link>
               ) : (
@@ -36,6 +49,7 @@ const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
                   {item.name}
                 </a>
               )}
+
               {item.dropdown && (
                 <ul className="dropdown-menu">
                   {item.subcategories.map(sub => (
@@ -52,10 +66,9 @@ const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
         </ul>
       </nav>
 
-      {/* --- 2. MENÚ HAMBURGUESA (Visible solo en Celular) --- */}
+      {/* --- MENÚ HAMBURGUESA --- */}
       <div className={`mobile-menu-drawer ${isMobileMenuOpen ? 'open' : ''}`}>
         <button className="mobile-menu-close" onClick={onCloseMenu}>&times;</button>
-        {/* 💥 Aquí está el scroll del menú hamburguesa 💥 */}
         <div className="mobile-menu-content-scroll"> 
           <ul className="mobile-nav-list">
             {menuItems.map(item => {
@@ -75,7 +88,7 @@ const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
               }
               return (
                 <li key={item.name}>
-                  <Link to={`/categoria/${item.filterKey || item.name}`} className="mobile-nav-link" onClick={handleLinkClick}>
+                  <Link to={getLink(item)} className="mobile-nav-link" onClick={handleLinkClick}>
                     {item.name}
                   </Link>
                 </li>
