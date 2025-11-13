@@ -768,3 +768,24 @@ footer {
     width: 100%;
   }
 }
+/* --- ESTILOS PÁGINA DE BÚSQUEDA --- */
+
+.search-page-container .back-button {
+  margin-bottom: 20px;
+}
+
+.search-title {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 10px;
+}
+
+.empty-search-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  padding: 50px 0;
+}

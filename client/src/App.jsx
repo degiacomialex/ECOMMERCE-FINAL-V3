@@ -15,7 +15,7 @@ import ToastNotification from './components/ToastNotification';
 import { HomePage } from './pages/HomePage';
 import { CategoryPage } from './pages/CategoryPage';
 import { CartPage } from './pages/CartPage';
-
+import { SearchPage } from './pages/SearchPage';
 const App = () => {
   // --- Estados Globales ---
   const [products, setProducts] = useState([]); 
@@ -131,15 +131,25 @@ const App = () => {
                 totalPrice={totalPrice}
                 onRemoveFromCart={removeFromCart}
                 onCheckout={handleCheckout}
-              />
+                />
             } 
-          />
-        </Routes>
-      </main>
+            />
 
-      <Footer />
+        <Route 
+            path="/buscar/:searchTerm" 
+            element={
+                <SearchPage 
+                products={products}
+                onShowDetails={handleVerDetalle}
+                onAddToCart={addToCart}
+                />
+            } 
+            />
+    </Routes>
+    </main>
+        <Footer />
     </div>
-  );
+    );
 };
 
 export default App;
