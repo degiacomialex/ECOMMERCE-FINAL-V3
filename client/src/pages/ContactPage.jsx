@@ -3,11 +3,8 @@
 import React from 'react';
 import '../App.css'; 
 
-// El formulario ya no necesita JS para enviar, el HTML lo hace por Formspree
 export const ContactPage = () => {
-
-  // 💥 ELIMINAMOS la función 'handleSubmit' de JavaScript (ya no es necesaria)
-
+    
   return (
     <div className="contact-page-container">
       <div className="contact-header">
@@ -16,19 +13,19 @@ export const ContactPage = () => {
       </div>
 
       <div className="contact-main-content">
-
-        {/* --- LADO IZQUIERDO: FORMULARIO --- */}
-        {/* 💥 CAMBIO CRÍTICO: Aquí debes PEGAR tu URL única de Formspree 💥 */}
-        <form className="contact-form" action="https://formspree.io/f/xkgdjred" method="POST"> 
+        
+        {/* 💥 CAMBIO CRÍTICO: PEGA AQUÍ TU URL ÚNICA DE FORMSPREE 💥 */}
+        {/* Ejemplo: action="https://formspree.io/f/mlekrrbn" */}
+        <form className="contact-form" action="TU_URL_DE_FORMSPREE_AQUI" method="POST"> 
           <div className="form-group">
             <label htmlFor="name">Tu nombre completo por favor</label>
-            {/* 💥 CAMBIO: Agregamos el atributo 'name' para que Formspree lo reciba */}
+            {/* El atributo name="Nombre" es lo que Formspree recibirá */}
             <input type="text" id="name" name="Nombre" placeholder="Escribe tu nombre aquí" required />
           </div>
 
           <div className="form-group">
             <label htmlFor="email">Tu correo electrónico aquí*</label>
-            {/* 💥 CAMBIO: El input de email DEBE tener name="_replyto" para que te permita responder directamente */}
+            {/* name="_replyto" es CRÍTICO para poder responder al email del cliente */}
             <input type="email" id="email" name="_replyto" placeholder="Escribe tu email aquí" required />
           </div>
 
@@ -40,9 +37,8 @@ export const ContactPage = () => {
           <button type="submit" className="submit-button">Enviar mi solicitud ahora</button>
         </form>
 
-        {/* --- LADO DERECHO: INFO Y MAPA --- */}
         <div className="contact-info">
-
+          
           <div className="info-section">
             <h3>Redes Sociales</h3>
             <div className="social-links">
@@ -55,7 +51,6 @@ export const ContactPage = () => {
           <div className="info-section">
             <h3>Ubicación</h3>
             <p>Av. Siempre Viva 742, Springfield</p>
-            {/* 💥 PUNTO 9: Aquí puedes pegar el código de Google Maps 💥 */}
             <div className="map-placeholder">
               [Aquí iría el mapa de Google Maps]
             </div>
