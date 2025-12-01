@@ -16,7 +16,7 @@ export const ContactPage = () => {
         
         {/* 💥 CAMBIO CRÍTICO: PEGA AQUÍ TU URL ÚNICA DE FORMSPREE 💥 */}
         {/* Ejemplo: action="https://formspree.io/f/mlekrrbn" */}
-        <form className="contact-form" action="TU_URL_DE_FORMSPREE_AQUI" method="POST"> 
+        <form className="contact-form" action="https://formspree.io/f/xkgdjred" method="POST"> 
           <div className="form-group">
             <label htmlFor="name">Tu nombre completo por favor</label>
             {/* El atributo name="Nombre" es lo que Formspree recibirá */}
