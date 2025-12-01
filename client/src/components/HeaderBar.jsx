@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../App.css';
+// 💥 FIX: RUTA ABSOLUTA. Debe empezar con / para que Vite compile
 import LOGO_SRC from '/images/logo.jpeg'; 
 
-// 💥 Recibimos el prop cartItemCount 💥
 const HeaderBar = ({ cartItemCount, onHamburgerClick }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
@@ -46,7 +46,6 @@ const HeaderBar = ({ cartItemCount, onHamburgerClick }) => {
       </form>
       
       <Link to="/carrito" className="cart-icon cart-link">
-        {/* 💥 Aquí se muestra el número correcto 💥 */}
         🛒 Carrito ({cartItemCount})
       </Link>
     </header>
