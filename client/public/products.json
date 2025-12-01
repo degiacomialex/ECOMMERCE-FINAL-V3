@@ -1,14 +1,226 @@
 [
-    { "id": 1, "category": "RIÑONERAS", "name": "Riñonera Lobo", "price": 15000, "image": "/ECOMMERCE-FINAL-V3/images/producto1.jpeg", "description": "Riñonera de tela sublimada con diseño de lobo. Ideal para paseos y deporte." },
-    { "id": 2, "category": "SET DE MATE", "name": "Set Matero Floral", "price": 18000, "image": "/ECOMMERCE-FINAL-V3/images/producto2.jpeg", "description": "Set completo de mate con diseño floral, incluye termo, mate, yerbero y azucarero." },
-    { "id": 3, "category": "MOCHILAS INFANTILES", "name": "Mochila Cars", "price": 25000, "image": "/ECOMMERCE-FINAL-V3/images/producto3.jpeg", "description": "Mochila infantil con diseño de la película Cars. Amplia y resistente, perfecta para el jardín." },
-    { "id": 4, "category": "TAZAS Y TERMOS", "name": "Termo Personalizado", "price": 20000, "image": "/ECOMMERCE-FINAL-V3/images/producto4.jpeg", "description": "Termo de acero inoxidable personalizado a tu gusto. Mantiene la temperatura por horas." },
-    { "id": 5, "category": "TAZAS Y TERMOS", "name": "Set Tazas", "price": 9000, "image": "/ECOMMERCE-FINAL-V3/images/producto1.jpeg", "description": "Juego de dos tazas de cerámica sublimadas con diseños a elección." },
-    { "id": 6, "category": "RIÑONERAS", "name": "Riñonera Gato", "price": 15500, "image": "/ECOMMERCE-FINAL-V3/images/producto2.jpeg", "description": "Riñonera con estampado de gatos juguetones. Ajustable y con varios compartimentos." },
-    { "id": 7, "category": "REGALOS PADRE", "name": "Set Asado Papá", "price": 30000, "image": "/ECOMMERCE-FINAL-V3/images/producto3.jpeg", "description": "Set de asado premium que incluye delantal y manopla sublimados con diseños para el Día del Padre." },
-    { "id": 8, "category": "ESCOLAR", "name": "Cartuchera", "price": 5000, "image": "/ECOMMERCE-FINAL-V3/images/producto4.jpeg", "description": "Cartuchera escolar amplia, totalmente sublimada con el personaje o diseño que prefieras." },
-    { "id": 9, "category": "RIÑONERAS", "name": "Riñonera Unicornio", "price": 16000, "image": "/ECOMMERCE-FINAL-V3/images/producto1.jpeg", "description": "Riñonera infantil con diseño de unicornio." },
-    { "id": 10, "category": "SET DE MATE", "name": "Set de Mate River", "price": 19500, "image": "/ECOMMERCE-FINAL-V3/images/producto2.jpeg", "description": "Set de mate con diseño del club River Plate." },
-    { "id": 11, "category": "MOCHILAS INFANTILES", "name": "Mochila Spiderman", "price": 26000, "image": "/ECOMMERCE-FINAL-V3/images/producto3.jpeg", "description": "Mochila con diseño de Spiderman." },
-    { "id": 12, "category": "TAZAS Y TERMOS", "name": "Taza con Frase", "price": 4500, "image": "/ECOMMERCE-FINAL-V3/images/producto4.jpeg", "description": "Taza de cerámica con frase motivacional." }
-  ]
+  { 
+    "id": 1, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Gamer Clásico Retro", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-1.jpg", 
+    "description": "Taza de cerámica color negra sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 2, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Gamer Vintage Borgoña", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-2.jpg", 
+    "description": "Taza de cerámica sublimada color bordo, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 3, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Super Papá Mario Bros Rojo", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-3.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 4, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Papá Gamer Forever (Amarilla)", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-4.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 5, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Super Papá Sticker Bomb", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-5.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 6, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Papá Gamer con Mario Waving", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-6.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 7, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Papá Gamer Naranja Control", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-7.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 8, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Papá Gamer Pink Controller", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-8.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 9, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Gamer Gráfico Roto Rojo/Negro", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-9.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 10, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Papá Gamer Forever Blanco/Negro", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-10.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 11, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Papá Gamer Sonic Rings", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-11.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 12, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Super Papá 8-Bit", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-12.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 13, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Papá Gamer Sillón Verde", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-13.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 14, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Gamer Forever Alas", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-14.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 15, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Papá Gamer Barra de Vida", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-15.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 16, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Papá Gamer Tigre Amarillo", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-16.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { // 👈 Taza 17 (Día del Padre)
+    "id": 17, 
+    "category": "TAZAS,Día del Padre", 
+    "name": "Taza Padre Palabras de Colores", 
+    "price": 10500, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-17.jpg", 
+    "description": "Taza de cerámica sublimada, ideal para el Día del Padre (Versión Gamer). Capacidad: 330ml." 
+  },
+  { 
+    "id": 18, 
+    "category": "TAZAS,Día de la Madre", 
+    "name": "Taza Mamá La Mejor del Mundo (Rosada]", 
+    "price": 10800, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-18.jpg", 
+    "description": "Taza de cerámica con diseño floral exclusivo. Apta para microondas. Capacidad: 330ml." 
+  },
+  { 
+    "id": 19, 
+    "category": "TAZAS,Día de la Madre", 
+    "name": "Taza Mamá Más Hermosa (Corazón Púrpura)", 
+    "price": 10800, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-19.jpg", 
+    "description": "Taza de cerámica con diseño floral exclusivo. Apta para microondas. Capacidad: 330ml." 
+  },
+  { 
+    "id": 20, 
+    "category": "TAZAS,Día de la Madre", 
+    "name": "Taza Mamá Muchos Besos (Rayas Rosas)", 
+    "price": 10800, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-20.jpg", 
+    "description": "Taza de cerámica con diseño floral exclusivo. Apta para microondas. Capacidad: 330ml." 
+  },
+  { 
+    "id": 21, 
+    "category": "TAZAS,Día de la Madre", 
+    "name": "Taza Mamá Te Amo Siempre (Guirnalda)", 
+    "price": 10800, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-21.jpg", 
+    "description": "Taza de cerámica con diseño floral exclusivo. Apta para microondas. Capacidad: 330ml." 
+  },
+  { 
+    "id": 22, 
+    "category": "TAZAS,Día de la Madre", 
+    "name": "Taza Mamá Bella y Hermosa (Mariposas)", 
+    "price": 10800, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-22.jpg", 
+    "description": "Taza de cerámica con diseño floral exclusivo. Apta para microondas. Capacidad: 330ml." 
+  },
+  { 
+    "id": 23, 
+    "category": "TAZAS,Día de la Madre", 
+    "name": "Taza Mamá Bella y Hermosa (Fondo Azul)", 
+    "price": 10800, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-23.jpg", 
+    "description": "Taza de cerámica con diseño floral exclusivo. Apta para microondas. Capacidad: 330ml." 
+  },
+  { 
+    "id": 24, 
+    "category": "TAZAS,Día de la Madre", 
+    "name": "Taza Mamá y Esposa Maravillosa", 
+    "price": 10800, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-24.jpg", 
+    "description": "Taza de cerámica con diseño floral exclusivo. Apta para microondas. Capacidad: 330ml." 
+  },
+  { 
+    "id": 25, 
+    "category": "TAZAS,Día de la Madre", 
+    "name": "Taza Mamá Siempre en mi Corazón", 
+    "price": 10800, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-25.jpg", 
+    "description": "Taza de cerámica con diseño floral exclusivo. Apta para microondas. Capacidad: 330ml." 
+  },
+  { 
+    "id": 26, 
+    "category": "TAZAS,Día de la Madre", 
+    "name": "Taza Mamá Más Hermosa del Mundo (Morada)", 
+    "price": 10800, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-26.jpg", 
+    "description": "Taza de cerámica con diseño floral exclusivo. Apta para microondas. Capacidad: 330ml." 
+  },
+  { 
+    "id": 27, 
+    "category": "TAZAS,Día de la Madre", 
+    "name": "Taza Mamá Diseño Floral Básico", 
+    "price": 10800, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-27.jpg", 
+    "description": "Taza de cerámica con diseño floral exclusivo. Apta para microondas. Capacidad: 330ml." 
+  },
+  { // 👈 Taza 28 (Día de la Madre)
+    "id": 28, 
+    "category": "TAZAS,Día de la Madre", 
+    "name": "Taza Mamá Eres Única (Flores Grandes)", 
+    "price": 10800, 
+    "image": "/ECOMMERCE-FINAL-V3/images/tazas/taza-28.jpg", 
+    "description": "Taza de cerámica con diseño floral exclusivo. Apta para microondas. Capacidad: 330ml." 
+  }
+] // 👈 CIERRA LA LISTA AL FINAL
