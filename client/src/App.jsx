@@ -17,6 +17,7 @@ import { CategoryPage } from './pages/CategoryPage';
 import { CartPage } from './pages/CartPage';
 import { SearchPage } from './pages/SearchPage';
 import { ContactPage } from './pages/ContactPage';
+import { GuiaDeTallesPage } from './pages/GuiaDeTallesPage';
 
 const App = () => {
   // --- Estados Globales ---
@@ -168,6 +169,12 @@ const App = () => {
             path="/contacto" 
             element={ <ContactPage /> } 
           />
+
+          {/* 💥 NUEVA RUTA: Guía de Talles 💥 */}
+      <Route 
+        path="/guiadetalles" 
+        element={ <GuiaDeTallesPage /> } 
+      />
           
         </Routes>
       </main>

@@ -9,26 +9,24 @@ const menuItems = [
   { name: 'ACCESORIOS', dropdown: true, subcategories: ['Sets Materos Personalizados', 'Botellas Personalizadas', 'Gorras y Pilusos', 'Llaveros', 'Almohadones'] },
   { name: 'EGRESADOS', dropdown: true, subcategories: ['Buzos', 'Camperas', 'Remeras', 'Banderas'] },
   { name: 'FECHAS ESPECIALES', dropdown: true, subcategories: ['Día del Padre', 'Día de la Madre', 'Día del Amigo', 'Navidad', 'Otras Fiestas'] },
-  { name: 'PARA EMPRESAS', dropdown: true, subcategories: ['Ropa Corporativa', 'Merchandising'] },
-
-  // 💥 CAMBIO: Diferenciamos "categorías" de "páginas" 💥
+  { name: 'PARA EMPRESAS', dropdown: true, subcategories: ['Ropa Corporativa', 'Comercialización'] }, 
+  
+  // 💥 FIX: 'GUÍA DE TALLES' ahora es un link de página, no una categoría.
   { name: 'TAZAS', type: 'category', key: 'TAZAS' },
-  { name: 'GUÍA DE TALLES', type: 'category', key: 'GUIA DE TALLES' },
-  { name: 'CONTACTO', type: 'page', path: '/contacto' } // <-- ASÍ ES CORRECTO
+  { name: 'GUÍA DE TALLES', type: 'page', path: '/guiadetalles' }, // <-- ARREGLADO
+  { name: 'CONTACTO', type: 'page', path: '/contacto' } 
 ];
 
 const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
-
+  
   const handleLinkClick = () => {
     onCloseMenu();
   };
 
-  // Función para construir el link correcto
   const getLink = (item) => {
     if (item.type === 'page') {
-      return item.path; // ej: "/contacto"
+      return item.path; // ej: "/contacto" o "/guiadetalles"
     }
-    // Por defecto, es una categoría
     return `/categoria/${item.key || item.name}`; // ej: "/categoria/TAZAS"
   };
 
@@ -39,7 +37,7 @@ const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
         <ul className="main-nav">
           {menuItems.map(item => (
             <li key={item.name} className={`nav-item ${item.dropdown ? 'has-dropdown' : ''}`}>
-
+              
               {!item.dropdown ? (
                 <Link to={getLink(item)} className="nav-link">
                   {item.name}

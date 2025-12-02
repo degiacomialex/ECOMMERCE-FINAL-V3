@@ -3,28 +3,26 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ProductGallery from '../components/ProductGallery';
-import '../App.css'; // Para estilos
+import '../App.css'; 
 
 export const CategoryPage = ({ products, onShowDetails, onAddToCart }) => {
-  // 1. Obtiene el nombre de la categoría desde la URL (ej: "Tazas")
+  // 1. Obtiene el nombre de la categoría desde la URL
   const { categoryName } = useParams();
 
-  // 2. Filtra los productos que coinciden con esa categoría
+  // 💥 FIX CRÍTICO: Usamos .includes() para buscar la etiqueta dentro de la cadena
   const filteredProducts = products.filter(product => 
-    product.category.toUpperCase() === categoryName.toUpperCase()
+    product.category.toUpperCase().includes(categoryName.toUpperCase())
   );
 
   return (
     <div className="category-page-container">
-      {/* 💥 PUNTO 4: Botón para "Volver a Principal" 💥 */}
       <Link to="/" className="back-button">
         ← Volver a Principal
       </Link>
-
-      {/* 💥 PUNTO 3: Galería sin carrusel 💥 */}
+      
       <ProductGallery
         products={filteredProducts}
-        filterCategory={categoryName.toUpperCase()} // Muestra el título
+        filterCategory={categoryName.toUpperCase()}
         onShowDetails={onShowDetails}
         onAddToCart={onAddToCart}
       />

@@ -920,3 +920,55 @@ footer {
     flex-direction: column;
   }
 }
+/* --- CORRECCIÓN DE ESTILOS DEL MENÚ MÓVIL --- */
+
+/* Regla para el Encabezado (FECHAS ESPECIALES, etc.) */
+.mobile-nav-header {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-color); /* 💥 FIX: Color más oscuro para que se vea */
+  text-transform: uppercase; /* 💥 FIX: Aseguramos que los encabezados estén en mayúsculas */
+  background-color: #f4f4f4;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+/* Regla para los Links Simples (TAZAS, CONTACTO) */
+/* Aseguramos que estos links se vean en el mismo estilo que los sublinks */
+.mobile-nav-link {
+  display: block;
+  padding: 15px 20px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #f0f0f0;
+  text-transform: capitalize; /* 💥 FIX: Para que los links se vean en "Inicial mayúscula" */
+}
+/* --- ESTILOS PARA GUÍA DE TALLES --- */
+.guia-talles-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.talles-table {
+  width: 80%;
+  margin: 30px auto;
+  border-collapse: collapse;
+}
+
+.talles-table th, .talles-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.talles-table th {
+  background-color: var(--secondary-color);
+  color: white;
+}
