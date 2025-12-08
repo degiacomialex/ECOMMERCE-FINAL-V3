@@ -3,13 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
+"scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "npm run build && shx rm -rf ../docs && shx cp -r dist ../docs"
-  },
+    "deploy": "npm run build"
+},
   "dependencies": {
     "axios": "^1.13.2",
     "react": "^19.1.1",

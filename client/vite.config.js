@@ -6,18 +6,16 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-
-  // 💥 AÑADIMOS ESTO 💥
-  // Le decimos a Vite que la carpeta de build
-  // NO sea 'dist', sino que sea la carpeta '/docs'
-  // en la raíz del proyecto (../ sube un nivel)
-  build: {
-    outDir: '../docs',
-    emptyOutDir: true, // Limpia la carpeta 'docs' antes de cada build
-  },
-
-  // 💥 AÑADIMOS ESTO TAMBIÉN 💥
-  // Esto es necesario para que las imágenes y assets 
-  // funcionen bien en GitHub Pages
+  
+  // 💥 DEJAMOS LA RUTA BASE 💥
   base: '/ECOMMERCE-FINAL-V3/', 
+
+  // 💥 CORREGIMOS EL DIRECTORIO DE SALIDA 💥
+  // Esto le dice a Vite que guarde el resultado del build en "../docs" 
+  // (un nivel arriba, en la carpeta docs), lo cual es necesario para GitHub Pages.
+
+  build: {
+    outDir: '../docs', 
+    emptyOutDir: true,
+  },
 })

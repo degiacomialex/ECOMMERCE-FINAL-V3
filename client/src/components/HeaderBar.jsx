@@ -25,7 +25,7 @@ const HeaderBar = ({ cartItemCount, onHamburgerClick }) => {
 
       <Link to="/" className="header-logo-link" style={{textDecoration: 'none'}}>
         <h1>
-        <img src="/images/logo.jpeg" alt="Los Luisés Sublimación" style={{height: '30px', marginRight: '10px'}}/>
+        <img src="images/logo.jpeg" alt="Los Luisés Sublimación" style={{height: '30px', marginRight: '10px'}}/>
           <span className="title-black">Lo</span>
           <span className="title-blue">S</span>
           <span className="title-black">Luis</span>

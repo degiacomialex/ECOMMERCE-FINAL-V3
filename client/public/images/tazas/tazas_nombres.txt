@@ -1,29 +1,29 @@
-taza- (1).jpg
-taza- (10).jpg
-taza- (11).jpg
-taza- (12).jpg
-taza- (13).jpg
-taza- (14).jpg
-taza- (15).jpg
-taza- (16).jpg
-taza- (17).jpg
-taza- (18).jpg
-taza- (19).jpg
-taza- (2).jpg
-taza- (20).jpg
-taza- (21).jpg
-taza- (22).jpg
-taza- (23).jpg
-taza- (24).jpg
-taza- (25).jpg
-taza- (26).jpg
-taza- (27).jpg
-taza- (28).jpg
-taza- (3).jpg
-taza- (4).jpg
-taza- (5).jpg
-taza- (6).jpg
-taza- (7).jpg
-taza- (8).jpg
-taza- (9).jpg
+taza-1.jpg
+taza-10.jpg
+taza-11.jpg
+taza-12.jpg
+taza-13.jpg
+taza-14.jpg
+taza-15.jpg
+taza-16.jpg
+taza-17.jpg
+taza-18.jpg
+taza-19.jpg
+taza-2.jpg
+taza-20.jpg
+taza-21.jpg
+taza-22.jpg
+taza-23.jpg
+taza-24.jpg
+taza-25.jpg
+taza-26.jpg
+taza-27.jpg
+taza-28.jpg
+taza-3.jpg
+taza-4.jpg
+taza-5.jpg
+taza-6.jpg
+taza-7.jpg
+taza-8.jpg
+taza-9.jpg
 tazas_nombres.txt

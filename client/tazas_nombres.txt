@@ -1,0 +1,10 @@
+README.md
+eslint.config.js
+index.html
+node_modules/
+package-lock.json
+package.json
+public/
+src/
+tazas_nombres.txt
+vite.config.js
