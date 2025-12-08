@@ -7,13 +7,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   
-  // 💥 DEJAMOS LA RUTA BASE 💥
-  // base: '/ECOMMERCE-FINAL-V3/',
+  // 🟢 CORRECCIÓN CLAVE: Eliminamos la línea 'base' para evitar conflictos de rutas con GitHub Pages.
+  // base: '/ECOMMERCE-FINAL-V3/', 
 
-  // 💥 CORREGIMOS EL DIRECTORIO DE SALIDA 💥
-  // Esto le dice a Vite que guarde el resultado del build en "../docs" 
-  // (un nivel arriba, en la carpeta docs), lo cual es necesario para GitHub Pages.
-
+  // 💥 DIRECTORIO DE SALIDA: Esto es CORRECTO para la estrategia de GitHub Pages.
   build: {
     outDir: '../docs', 
     emptyOutDir: true,
