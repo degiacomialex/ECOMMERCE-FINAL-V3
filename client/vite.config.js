@@ -7,8 +7,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   
-  // 🟢 CORRECCIÓN CLAVE: Eliminamos la línea 'base' para evitar conflictos de rutas con GitHub Pages.
-  // base: '/ECOMMERCE-FINAL-V3/', 
+// 🟢 CORRECCIÓN FINAL: Usar './' fuerza las rutas relativas en el index.html final.
+base: './',
 
   // 💥 DIRECTORIO DE SALIDA: Esto es CORRECTO para la estrategia de GitHub Pages.
   build: {
