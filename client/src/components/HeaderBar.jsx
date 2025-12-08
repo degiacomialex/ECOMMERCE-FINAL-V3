@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../App.css';
-// 💥 FIX: RUTA ABSOLUTA. Debe empezar con / para que Vite compile
-import LOGO_SRC from '/images/logo.jpeg'; 
+
 
 const HeaderBar = ({ cartItemCount, onHamburgerClick }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,7 +25,7 @@ const HeaderBar = ({ cartItemCount, onHamburgerClick }) => {
 
       <Link to="/" className="header-logo-link" style={{textDecoration: 'none'}}>
         <h1>
-          <img src={LOGO_SRC} alt="Los Luisés Sublimación" style={{height: '30px', marginRight: '10px'}}/>
+        <img src="/images/logo.jpeg" alt="Los Luisés Sublimación" style={{height: '30px', marginRight: '10px'}}/>
           <span className="title-black">Lo</span>
           <span className="title-blue">S</span>
           <span className="title-black">Luis</span>

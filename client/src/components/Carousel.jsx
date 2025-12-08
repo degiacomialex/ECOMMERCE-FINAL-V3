@@ -3,14 +3,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import '../App.css';
 // 💥 FIX DEFINITIVO: Todas las importaciones de assets deben empezar con /
-import carrusel1 from '/images/carrusel1.jpeg'; 
-import carrusel2 from '/images/carrusel2.jpeg';
-import carrusel3 from '/images/carrusel3.jpeg';
+// BORRAR o COMENTAR ESTAS LÍNEAS:
+// import carrusel1 from '/images/carrusel1.jpeg'; 
+// import carrusel2 from '/images/carrusel2.jpeg';
+// import carrusel3 from '/images/carrusel3.jpeg';
 
 const carouselData = [
-  { id: 1, image: carrusel1, alt: "Carrusel 1" },
-  { id: 2, image: carrusel2, alt: "Carrusel 2" },
-  { id: 3, image: carrusel3, alt: "Carrusel 3" },
+  { id: 1, image: '/images/carrusel1.jpeg', alt: "Carrusel 1" },
+  { id: 2, image: '/images/carrusel2.jpeg', alt: "Carrusel 2" },
+  { id: 3, image: '/images/carrusel3.jpeg', alt: "Carrusel 3" },
 ];
 
 const Carousel = () => {
