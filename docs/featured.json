@@ -1,0 +1,58 @@
+
+[
+    {
+        "id": "F-1",
+        "title": "Indumentaria Personalizada",
+        "subtitle": "Buzos, Camperas y Remeras",
+        "link": "/categoria/Buzos Y Camperas",
+        "images": [
+            "images/featured/buzos-featured.jpg",
+            "images/featured/camperas-featured.jpg",
+            "images/featured/remeras-featured.jpg"
+        ]
+    },
+    {
+        "id": "F-2",
+        "title": "Accesorios y Sublimación",
+        "subtitle": "Botellas, Gorras y Almohadones",
+        "link": "/categoria/ACCESORIOS",
+        "images": [
+            "images/featured/botellas-featured.jpg",
+            "images/featured/gorras-featured.jpg",
+            "images/featured/almohadones-featured.jpg"
+        ]
+    },
+    {
+        "id": "F-3",
+        "title": "Egresados",
+        "subtitle": "Buzos, Camperas, y Remeras",
+        "link": "/categoria/EGRESADOS",
+        "images": [
+            "images/featured/buzoEgre1N-featured.jpg",
+            "images/featured/camperaEgre1-featured.jpg",
+            "images/featured/egredito-featured.jpg"
+        ]
+    },
+    {
+        "id": "F-3",
+        "title": "Fechas Especiales",
+        "subtitle": "Día del Padre y Día de la Madre",
+        "link": "/categoria/Día del Padre",
+        "images": [
+            "images/featured/padre-featured.jpg",
+            "images/featured/madre-featured.jpg",
+            "images/featured/tazas-featured.jpg"
+        ]
+    },
+    {
+        "id": "F-4",
+        "title": " Empresas ind. y Accesorios",
+        "subtitle": "Botellas, Gorras y indumentaria",
+        "link": "/categoria/ Ropa Corporativa",
+        "images": [
+            "images/featured/botellas2-featured.jpg",
+            "images/featured/indu1-featured.jpg",
+            "images/featured/indu2-featured.jpg"
+        ]
+    }
+]
