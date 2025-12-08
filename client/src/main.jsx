@@ -8,7 +8,8 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/ECOMMERCE-FINAL-V3/">
+    {/* 🟢 CRÍTICO: Eliminamos el basename. La aplicación usará rutas relativas. */}
+    <BrowserRouter> 
       <App />
     </BrowserRouter>
   </React.StrictMode>
