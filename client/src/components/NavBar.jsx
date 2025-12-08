@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 import '../App.css'; 
 
 const menuItems = [
-  { name: 'INDUMENTARIA PERSONALIZADA', dropdown: true, subcategories: ['Remeras', 'Buzos y Camperas'] },
-  { name: 'ACCESORIOS', dropdown: true, subcategories: ['Sets Materos Personalizados', 'Botellas Personalizadas', 'Gorras y Pilusos', 'Llaveros', 'Almohadones'] },
+  { name: 'INDUMENTARIA PERSONALIZADA', dropdown: true, subcategories: ['Remeras', 'Buzos Y Camperas'] },
+  { name: 'ACCESORIOS', dropdown: true, subcategories: ['Sets Materos Personalizados', 'Botellas Personalizadas', 'Gorras Y Pilusos', 'Llaveros', 'Almohadones'] },
   { name: 'EGRESADOS', dropdown: true, subcategories: ['Buzos', 'Camperas', 'Remeras', 'Banderas'] },
-  { name: 'FECHAS ESPECIALES', dropdown: true, subcategories: ['Día del Padre', 'Día de la Madre', 'Día del Amigo', 'Navidad', 'Otras Fiestas'] },
+  { name: 'FECHAS ESPECIALES', dropdown: true, subcategories: ['Día Del Padre', 'Día De La Madre', 'Día Del Amigo', 'Navidad', 'Otras Fiestas'] },
   { name: 'PARA EMPRESAS', dropdown: true, subcategories: ['Ropa Corporativa', 'Comercialización'] }, 
   
-  // 💥 FIX: 'GUÍA DE TALLES' ahora es un link de página, no una categoría.
-  { name: 'TAZAS', type: 'category', key: 'TAZAS' },
-  { name: 'GUÍA DE TALLES', type: 'page', path: '/guiadetalles' }, // <-- ARREGLADO
+  // ❌ LÍNEA ELIMINADA: { name: 'TAZAS', type: 'category', key: 'TAZAS' }
+  
+  { name: 'GUÍA DE TALLES', type: 'page', path: '/guiadetalles' }, 
   { name: 'CONTACTO', type: 'page', path: '/contacto' } 
 ];
 
@@ -27,7 +27,8 @@ const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
     if (item.type === 'page') {
       return item.path; // ej: "/contacto" o "/guiadetalles"
     }
-    return `/categoria/${item.key || item.name}`; // ej: "/categoria/TAZAS"
+    // Si no es página, es una categoría (usamos item.name como la clave si no hay 'key')
+    return `/categoria/${item.key || item.name}`; 
   };
 
   return (
@@ -52,6 +53,7 @@ const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
                 <ul className="dropdown-menu">
                   {item.subcategories.map(sub => (
                     <li key={sub}>
+                      {/* Genera la URL como /categoria/Día Del Padre */}
                       <Link to={`/categoria/${sub}`} className="dropdown-link">
                         {sub}
                       </Link>
