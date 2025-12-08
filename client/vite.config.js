@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react()],
   
   // 💥 DEJAMOS LA RUTA BASE 💥
-  base: '/ECOMMERCE-FINAL-V3/', 
+  // base: '/ECOMMERCE-FINAL-V3/',
 
   // 💥 CORREGIMOS EL DIRECTORIO DE SALIDA 💥
   // Esto le dice a Vite que guarde el resultado del build en "../docs" 
