@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../App.css';
-
+// ❌ IMPORTACIÓN ELIMINADA: Usamos la ruta estática en línea
 
 const HeaderBar = ({ cartItemCount, onHamburgerClick }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +25,8 @@ const HeaderBar = ({ cartItemCount, onHamburgerClick }) => {
 
       <Link to="/" className="header-logo-link" style={{textDecoration: 'none'}}>
         <h1>
-        <img src="images/logo.jpeg" alt="Los Luisés Sublimación" style={{height: '30px', marginRight: '10px'}}/>
+          {/* 🟢 RUTA ESTÁTICA DIRECTA: Para evitar el conflicto de compilación */}
+          <img src="/images/logo.jpeg" alt="Los Luisés Sublimación" style={{height: '30px', marginRight: '10px'}}/>
           <span className="title-black">Lo</span>
           <span className="title-blue">S</span>
           <span className="title-black">Luis</span>

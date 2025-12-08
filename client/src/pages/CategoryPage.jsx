@@ -9,7 +9,7 @@ export const CategoryPage = ({ products, onShowDetails, onAddToCart }) => {
   // 1. Obtiene el nombre de la categoría desde la URL
   const { categoryName } = useParams();
 
-  // 💥 FIX CRÍTICO: Usamos .includes() para buscar la etiqueta dentro de la cadena
+  // 🟢 FIX DE LÓGICA: Usamos .includes() para buscar la etiqueta dentro de la cadena (ej: "TAZAS,Día del Padre")
   const filteredProducts = products.filter(product => 
     product.category.toUpperCase().includes(categoryName.toUpperCase())
   );
