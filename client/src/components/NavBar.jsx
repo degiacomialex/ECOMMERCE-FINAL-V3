@@ -10,9 +10,7 @@ const menuItems = [
   { name: 'EGRESADOS', dropdown: true, subcategories: ['Buzos', 'Camperas', 'Remeras', 'Banderas'] },
   { name: 'FECHAS ESPECIALES', dropdown: true, subcategories: ['Día Del Padre', 'Día De La Madre', 'Día Del Amigo', 'Navidad', 'Otras Fiestas'] },
   { name: 'PARA EMPRESAS', dropdown: true, subcategories: ['Ropa Corporativa', 'Comercialización'] }, 
-  
-  // ❌ LÍNEA ELIMINADA: { name: 'TAZAS', type: 'category', key: 'TAZAS' }
-  
+  { name: 'TAZAS', type: 'category', key: 'TAZAS' },
   { name: 'GUÍA DE TALLES', type: 'page', path: '/guiadetalles' }, 
   { name: 'CONTACTO', type: 'page', path: '/contacto' } 
 ];
@@ -25,9 +23,9 @@ const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
 
   const getLink = (item) => {
     if (item.type === 'page') {
-      return item.path; // ej: "/contacto" o "/guiadetalles"
+      return item.path;
     }
-    // Si no es página, es una categoría (usamos item.name como la clave si no hay 'key')
+    // Genera la URL como /categoria/TAZAS
     return `/categoria/${item.key || item.name}`; 
   };
 
@@ -40,6 +38,7 @@ const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
             <li key={item.name} className={`nav-item ${item.dropdown ? 'has-dropdown' : ''}`}>
               
               {!item.dropdown ? (
+                // Lógica para TAZAS, GUÍA DE TALLES y CONTACTO
                 <Link to={getLink(item)} className="nav-link">
                   {item.name}
                 </Link>
@@ -53,7 +52,7 @@ const NavBar = ({ isMobileMenuOpen, onCloseMenu }) => {
                 <ul className="dropdown-menu">
                   {item.subcategories.map(sub => (
                     <li key={sub}>
-                      {/* Genera la URL como /categoria/Día Del Padre */}
+                      {/* Genera la URL para subcategorías como /categoria/Día Del Padre */}
                       <Link to={`/categoria/${sub}`} className="dropdown-link">
                         {sub}
                       </Link>
