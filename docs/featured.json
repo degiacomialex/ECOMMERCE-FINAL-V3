@@ -6,9 +6,9 @@
         "subtitle": "Buzos, Camperas y Remeras",
         "link": "/categoria/Buzos Y Camperas",
         "images": [
-            "images/featured/buzos-featured.jpg",
-            "images/featured/camperas-featured.jpg",
-            "images/featured/remeras-featured.jpg"
+            "/images/featured/buzos-featured.jpg",
+            "/images/featured/camperas-featured.jpg",
+            "/images/featured/remeras-featured.jpg"
         ]
     },
     {
@@ -17,9 +17,9 @@
         "subtitle": "Botellas, Gorras y Almohadones",
         "link": "/categoria/ACCESORIOS",
         "images": [
-            "images/featured/botellas-featured.jpg",
-            "images/featured/gorras-featured.jpg",
-            "images/featured/almohadones-featured.jpg"
+            "/images/featured/botellas-featured.jpg",
+            "/images/featured/gorras-featured.jpg",
+            "/images/featured/almohadones-featured.jpg"
         ]
     },
     {
@@ -28,9 +28,9 @@
         "subtitle": "Buzos, Camperas, y Remeras",
         "link": "/categoria/EGRESADOS",
         "images": [
-            "images/featured/buzoEgre1N-featured.jpg",
-            "images/featured/camperaEgre1-featured.jpg",
-            "images/featured/egredito-featured.jpg"
+            "/images/featured/buzoEgre1N-featured.jpg",
+            "/images/featured/camperaEgre1-featured.jpg",
+            "/images/featured/egredito-featured.jpg"
         ]
     },
     {
@@ -39,9 +39,9 @@
         "subtitle": "Día del Padre y Día de la Madre",
         "link": "/categoria/Día del Padre",
         "images": [
-            "images/featured/padre-featured.jpg",
-            "images/featured/madre-featured.jpg",
-            "images/featured/tazas-featured.jpg"
+            "/images/featured/padre-featured.jpg",
+            "/images/featured/madre-featured.jpg",
+            "/images/featured/tazas-featured.jpg"
         ]
     },
     {
@@ -50,9 +50,9 @@
         "subtitle": "Botellas, Gorras y indumentaria",
         "link": "/categoria/ Ropa Corporativa",
         "images": [
-            "images/featured/botellas2-featured.jpg",
-            "images/featured/indu1-featured.jpg",
-            "images/featured/indu2-featured.jpg"
+            "/images/featured/botellas2-featured.jpg",
+            "/images/featured/indu1-featured.jpg",
+            "/images/featured/indu2-featured.jpg"
         ]
     }
 ]
